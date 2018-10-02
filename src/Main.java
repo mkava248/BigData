@@ -8,14 +8,14 @@ public class Main {
 		db.init();
 
 		String url, code_source;
-		GrabHTML grab = new GrabHTML();
+		GetSource grab = new GetSource();
 		ArrayList<String> spells;
 		try {
 			// Calling the Connect method
 			for (int i = 1; i < 1976; i++) { // max : 1976
 				// System.out.println(i);
 				url = "http://www.dxcontent.com/SDB_SpellBlock.asp?SDBID=" + i;
-				code_source = grab.Connect(url);
+				code_source = grab.GetCode(url);
 				Parser parser = new Parser(code_source);
 				Spell spell = parser.Parse();
 				if (spell != null) {
@@ -32,7 +32,7 @@ public class Main {
 			System.out.println("Finish");
 
 		} catch (Exception e) {
-
+			System.out.println(e.getMessage());
 		}
 	}
 }
