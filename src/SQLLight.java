@@ -8,6 +8,10 @@ public class SQLLight {
 	private boolean connectBool = false;
 	private int nbr;
 
+	/**
+	 * Permet de se connecter à la base de données SQLLite. Créer la base si
+	 * celle n'existe pas
+	 */
 	public void connect() {
 
 		try {
@@ -23,6 +27,9 @@ public class SQLLight {
 
 	}
 
+	/**
+	 * Ferme la base de données pour ne pas avoir de problème
+	 */
 	public void close() {
 		try {
 			stmt.close();
@@ -34,9 +41,13 @@ public class SQLLight {
 		}
 	}
 
+	/**
+	 * Créer toutes les tables. Rajoute les données dans la table Components
+	 */
 	public void init() {
 		if (connectBool) {
 			try {
+				//stmt.execute("DROP TABLE Spell");
 				String sql = "CREATE TABLE IF NOT EXISTS Spell" // IF NOT EXISTS
 						+ "(ID INTEGER PRIMARY KEY     AUTOINCREMENT,"
 						+ " NAME           TEXT    NOT NULL, "
@@ -49,6 +60,7 @@ public class SQLLight {
 						+ " NAME           TEXT    NOT NULL)";
 				stmt.executeUpdate(sql);
 
+				//stmt.execute("DROP TABLE ComponentsBySpells");
 				sql = "CREATE TABLE IF NOT EXISTS ComponentsBySpells "
 						+ "(ID INTEGER PRIMARY KEY     AUTOINCREMENT,"
 						+ " INDEXSPELL     INT     NOT NULL,"
@@ -85,55 +97,72 @@ public class SQLLight {
 		}
 	}
 
+	/**
+	 * Ajoute un spell dans table Spell et fait les liaisons avec les composants
+	 * dans la table ComponentsBySpells
+	 * 
+	 * @param spell
+	 *            (Spell)
+	 * @throws Exception
+	 */
 	public void addSpell(Spell spell) throws Exception {
 		try {
 			int resistanceInt = spell.isSpell_resistance() ? 1 : 0;
 			String sql = "SELECT * FROM Spell WHERE NAME = '" + spell.getName()
 					+ "';";
 			ResultSet result = stmt.executeQuery(sql);
-			Object obj = result.getObject(1);
-			if (obj == null) {
-				sql = "INSERT INTO Spell  (NAME,LEVEl, RESISTANCE) VALUES ('"
-						+ spell.getName() + "', " + spell.getLevel() + ", "
-						+ resistanceInt + ");";
+			//Object obj = result.getObject(1);
+			// if (obj == null) {
+			sql = "INSERT INTO Spell  (NAME,LEVEl, RESISTANCE) VALUES ('"
+					+ spell.getName() + "', " + spell.getLevel() + ", "
+					+ resistanceInt + ");";
+			stmt.executeUpdate(sql);
+			nbr += 1;
+
+			for (int i = 0; i < spell.numberComponents(); i++) {
+				String component = spell.getComponent(i);
+				sql = "SELECT ID FROM Component WHERE NAME = '" + component
+						+ "';";
+				result = stmt.executeQuery(sql);
+				int id = result.getInt(1);
+				sql = "INSERT INTO ComponentsBySpells ( INDEXSPELL, INDEXCOMPONENT) VALUES ( "
+						+ nbr + ", " + id + ");";
+
 				stmt.executeUpdate(sql);
-				nbr += 1;
-
-				for (int i = 0; i < spell.numberComponents(); i++) {
-					String component = spell.getComponent(i);
-					sql = "SELECT ID FROM Component WHERE NAME = '" + component
-							+ "';";
-					result = stmt.executeQuery(sql);
-					int id = result.getInt(1);
-					sql = "INSERT INTO ComponentsBySpells ( INDEXSPELL, INDEXCOMPONENT) VALUES ( "
-							+ nbr + ", " + id + ");";
-
-					stmt.executeUpdate(sql);
-				}		
 			}
+			// }
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 			throw new Exception(e.getMessage());
 		}
 	}
-	
-	public ArrayList<String> getSpellByContraints() throws Exception{
+
+	/**
+	 * Applique la requête demandée pour le devoir 1. Les sorts sont de sorts de
+	 * sorcier, de niveau 4 maximum, et étant seulement verbaux.
+	 * 
+	 * @return spells (ArrayList<Spell>)
+	 * @throws Exception
+	 */
+	public ArrayList<String> getSpellByContraints() throws Exception {
 		ArrayList<String> spells = new ArrayList<String>();
-		try{
-			String sql = "SELECT Spell.NAME FROM Spell INNER JOIN ComponentsBySpells " +
-					"ON Spell.ID = ComponentsBySpells.INDEXSPELL " +
-					"WHERE Spell.LEVEL < 5 GROUP BY Spell.ID " +
-					"HAVING COUNT(Spell.ID) = 1 AND ComponentsBySpells.INDEXCOMPONENT = 1;";
-			
+		try {
+			// Permet de recuperer tous les sorts mage respectant les
+			// contraintes
+			String sql = "SELECT Spell.NAME FROM Spell INNER JOIN ComponentsBySpells "
+					+ "ON Spell.ID = ComponentsBySpells.INDEXSPELL "
+					+ "WHERE Spell.LEVEL < 5 GROUP BY Spell.ID "
+					+ "HAVING COUNT(Spell.ID) = 1 AND ComponentsBySpells.INDEXCOMPONENT = 1;";
+
 			ResultSet result = stmt.executeQuery(sql);
-			while(result.next()){
+			while (result.next()) {
 				spells.add(result.getString(1));
 			}
-		}catch(SQLException e){
+		} catch (SQLException e) {
 			e.printStackTrace();
 			throw new Exception(e.getMessage());
-		}		
+		}
 		return spells;
 	}
 }

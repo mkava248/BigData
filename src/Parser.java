@@ -3,12 +3,22 @@ public class Parser {
 	private String text;
 	private Spell spell;
 	
+	/**
+	 * Constructeur du parseur
+	 * 
+	 * @param text
+	 */
 	public Parser(String text){
 		this.text = text;
 		this.spell = null;
 	}
 	
-	public Spell Parse(){
+	/**
+	 * Permet d'obtenir le sort si celui est bien un sort de mage
+	 * 
+	 * @return spell (Spell) || null
+	 */
+	public Spell parse(){
 		
 		String[] tab1 = this.text.split("<div class='heading'>");
 		if(tab1.length < 2)

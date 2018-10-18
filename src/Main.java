@@ -3,29 +3,34 @@ import java.util.ArrayList;
 public class Main {
 	public static void main(String[] args) {
 
-		SQLLight db = new SQLLight();
-		db.connect();
-		db.init();
+		SQLLight dbSQL = new SQLLight();
+		dbSQL.connect();
+		dbSQL.init();
 
+		MongoDB mongo = new MongoDB();
+		mongo.connect();
+		
 		String url, code_source;
-		GetSource grab = new GetSource();
 		ArrayList<String> spells;
 		try {
 			// Calling the Connect method
-			for (int i = 1; i < 1976; i++) { // max : 1976
+			/*for (int i = 1; i < 1976; i++) { // max : 1976
 				// System.out.println(i);
 				url = "http://www.dxcontent.com/SDB_SpellBlock.asp?SDBID=" + i;
-				code_source = grab.GetCode(url);
+				code_source = GetSource.getCode(url);
 				Parser parser = new Parser(code_source);
-				Spell spell = parser.Parse();
+				Spell spell = parser.parse();
 				if (spell != null) {
-					// System.out.println(i);
-					db.addSpell(spell);
+					System.out.println(i);
+					dbSQL.addSpell(spell);
+					mongo.insertSpell(spell);
+					//System.out.println(spell);
 				}
 
-			}
-			spells = db.getSpellByContraints();
-			db.close();
+			}*/
+			spells = dbSQL.getSpellByContraints();
+			dbSQL.close();
+			mongo.getSpells();
 			for (String name : spells) {
 				System.out.println(name);
 			}
@@ -34,5 +39,7 @@ public class Main {
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 		}
+		
+		mongo.close();
 	}
 }

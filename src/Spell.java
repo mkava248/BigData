@@ -7,6 +7,9 @@ public class Spell {
 	private boolean spell_resistance;
 	private ArrayList<String> components;
 	
+	/**
+	 * Constructeur du sort
+	 */
 	public Spell(){
 		this.name = "unknow";
 		this.level = 0;
@@ -14,16 +17,33 @@ public class Spell {
 		components = new ArrayList<String>();
 	}
 	
+	/**
+	 * Constructeur du sort avec ses paramètres
+	 * 
+	 * @param name (String)
+	 * @param level (int)
+	 * @param spell_resistance (boolean)
+	 */
 	public Spell(String name, int level, boolean spell_resistance){
 		this.name = name;
 		this.level = level;
 		this.spell_resistance = spell_resistance;
 	}
 
+	/**
+	 * Obtenir le nom
+	 * 
+	 * @return name (String)
+	 */
 	public String getName() {
 		return name;
 	}
 
+	/**
+	 * Fixe le nom
+	 * 
+	 * @param name (String)
+	 */
 	public void setName(String name) {
 		this.name = name;
 	}
