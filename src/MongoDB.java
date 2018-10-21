@@ -54,20 +54,23 @@ public class MongoDB {
 
 	public void getSpells() {
 		
-		System.out.println("test");
 		String map = 
 				"function () { " +
-					"values = [this.level, this.components];"+
-					"emit(this.name, values);" +
+						"if(this.level < 5 && this.components[0] == 'V'){" +
+							"if(this.components.hasOwnProperty('1'))" + //cela veut dire qu'il n'y a pas que verbal
+								"emit('Pas un bon sort', 1);" +
+							"else " +
+								"emit(this.name, 1);" +
+							"}" +
+						"else " +
+							"emit('Pas bon', 1);" +
 				"}";
 
 		String reduce = 
-				"function (key, values) {" +
-						"if(values[0]<5.0)" +
-							"emit(key, true);" +
-						"emit(key, false);" +
-				"}";
-
+				"function(key, values) {" +
+						"return Array.sum(values);" +
+				" }";
+				
 		MapReduceIterable resultat = collection.mapReduce(map, reduce);
 
 		for (Object object : resultat) {
