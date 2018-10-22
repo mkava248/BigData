@@ -47,7 +47,7 @@ public class SQLLight {
 	public void init() {
 		if (connectBool) {
 			try {
-				//stmt.execute("DROP TABLE Spell");
+				stmt.execute("DROP TABLE Spell");
 				String sql = "CREATE TABLE IF NOT EXISTS Spell" // IF NOT EXISTS
 						+ "(ID INTEGER PRIMARY KEY     AUTOINCREMENT,"
 						+ " NAME           TEXT    NOT NULL, "
@@ -60,7 +60,7 @@ public class SQLLight {
 						+ " NAME           TEXT    NOT NULL)";
 				stmt.executeUpdate(sql);
 
-				//stmt.execute("DROP TABLE ComponentsBySpells");
+				stmt.execute("DROP TABLE ComponentsBySpells");
 				sql = "CREATE TABLE IF NOT EXISTS ComponentsBySpells "
 						+ "(ID INTEGER PRIMARY KEY     AUTOINCREMENT,"
 						+ " INDEXSPELL     INT     NOT NULL,"
