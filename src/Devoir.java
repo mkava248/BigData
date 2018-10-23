@@ -91,6 +91,8 @@ public class Devoir {
 		System.out.println("Page B : " + mongo.getPageRank("PageB"));
 		System.out.println("Page C : " + mongo.getPageRank("PageC"));
 		System.out.println("Page D : " + mongo.getPageRank("PageD"));
+		
+		mongo.close();
 	}
 		
 }
