@@ -25,7 +25,7 @@ public class Devoir {
 				Parser parser = new Parser(code_source);
 				Spell spell = parser.parse();
 				if (spell != null) {
-					System.out.println(i);
+					//System.out.println(i);
 					dbSQL.addSpell(spell);
 					mongo.insertSpell(spell);
 				}
@@ -55,40 +55,42 @@ public class Devoir {
 		MongoDB mongo = new MongoDB();
 		mongo.connectPartie2();
 		
-		ArrayList<Double> pagesRanks;
+		Page a = new Page("PageA", 2, 10);
+		Page b = new Page("PageB", 1, 10);
+		Page c = new Page("PageC", 1, 10);
+		Page d = new Page("PageD", 1, 10);
 		
-		mongo.insertPage(new Page("PageA", 2, 10));
-		mongo.insertPage(new Page("PageB", 1, 10));
-		mongo.insertPage(new Page("PageC", 1, 10));
-		mongo.insertPage(new Page("PageD", 1, 10));
+		//Ajout des liens
+		
+		a.addLink(c.getPageRank(), c.getNbLinkOut());
+		b.addLink(a.getPageRank(), a.getNbLinkOut());
+		c.addLink(a.getPageRank(), a.getNbLinkOut());
+		c.addLink(b.getPageRank(), b.getNbLinkOut());
+		c.addLink(d.getPageRank(), d.getNbLinkOut());
+		
+		//Insertion 
+		
+		mongo.insertPage(a);
+		mongo.insertPage(b);
+		mongo.insertPage(c);
+		mongo.insertPage(d);
+		
 		
 		
 		for(int i = 0; i<20; i++){
-			pagesRanks = mongo.getPagesRanks();
 			
 			for (int j = 0; j < 4; j++){
-				double pageRank = pagesRanks.get(j);
 				String name = "Page" + Character.toString((char) (65+j));
+				double pageRank = mongo.getPageRank(name);
 				mongo.updatePagesRanks(name, pageRank);
 			}
 		}
 		
-		pagesRanks = mongo.getPagesRanks();
-		System.out.println(pagesRanks);
+		
+		System.out.println("Page A : " + mongo.getPageRank("PageA"));
+		System.out.println("Page B : " + mongo.getPageRank("PageB"));
+		System.out.println("Page C : " + mongo.getPageRank("PageC"));
+		System.out.println("Page D : " + mongo.getPageRank("PageD"));
 	}
-
-			
-
-			/*private static void changerPageRank(int pageRank, String PageName) {
-				// insérer pagerank dans la base de donnée correspondant à la page PageName
-			}
-
-
-				for (int i = 0; i < 20; i++) {
-					changerPageRank(getPageRank("PageA"), "PageA");
-					changerPageRank(getPageRank("PageB"), "PageB");
-					changerPageRank(getPageRank("PageC"), "PageC");
-					changerPageRank(getPageRank("PageD"), "PageD");
-				}*/
 		
 }

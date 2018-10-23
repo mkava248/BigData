@@ -1,12 +1,27 @@
+import java.util.ArrayList;
+
 public class Page {
 	private String name;
-	private int nbLink;
+	private float nbLinkIn = 0;
+	private float nbLinkOut;
 	private float pageRank;
 	
-	public Page(String name, int nbLink, float pageRank) {
+	private ArrayList<float[]> linkName = new ArrayList<float[]>();
+	
+	public Page(String name, float nbLinkOut, float pageRank) {
 		this.name = name;
-		this.nbLink = nbLink;
+		this.nbLinkOut = nbLinkOut;
 		this.pageRank = pageRank;
+	}
+	
+	public void addLink(float pageRank, float linkOut){
+		float[] link = {pageRank, linkOut};
+		linkName.add(link);
+		this.nbLinkIn++;
+	}
+	
+	public float[] getLink(int index){
+		return linkName.get(index);
 	}
 
 	public String getName() {
@@ -17,12 +32,20 @@ public class Page {
 		this.name = name;
 	}
 
-	public int getNbLink() {
-		return nbLink;
+	public float getNbLinkIn() {
+		return nbLinkIn;
 	}
 
-	public void setNbLink(int nbLink) {
-		this.nbLink = nbLink;
+	public void setNbLinkIn(float nbLinkIn) {
+		this.nbLinkIn = nbLinkIn;
+	}
+	
+	public float getNbLinkOut() {
+		return nbLinkOut;
+	}
+
+	public void setNbLinkOut(float nbLinkOut) {
+		this.nbLinkOut = nbLinkOut;
 	}
 
 	public float getPageRank() {
