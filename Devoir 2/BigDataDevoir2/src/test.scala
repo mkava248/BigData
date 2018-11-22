@@ -8,7 +8,7 @@ object test extends App {
   val code = GetSource.getCode(string + "monsterIndex.html")
   val r = Parser.parseBestiaryLinks(code)
 
-/* val creatures = ArrayBuffer[Creature]()
+ val creatures = ArrayBuffer[Creature]()
 
  var i = 0
  for (i <- 0 until r.size()) {
@@ -26,14 +26,14 @@ object test extends App {
    }
 
  }
-*/
+
 
  val conf = new SparkConf().setAppName("petit test rapide").setMaster("local[*]")
  val sc = new SparkContext(conf)
  sc.setLogLevel("ERROR")
 
 
-
+/*
  println("Hello world !")
  var c1 = new Creature("Solar")
  c1.addSpell("etherealness")
@@ -54,7 +54,7 @@ object test extends App {
 
  val creatures = ArrayBuffer[Creature]()
  creatures +=c1
- creatures +=c2
+ creatures +=c2*/
  val rdd = sc.parallelize(creatures)
  //rdd = sc.parallelize(Array(c1, c2))
   /*def g(creature:Creature) = {
@@ -64,16 +64,10 @@ object test extends App {
     }
   }*/
 
-
-   var i = new ArrayBuffer[SparkConf]()
-
-
- def myfn(x: Creature) = Some(x._name)
-
- val a = rdd.flatMap(myfn).collect
- print(a)
-  //val temp = rdd.flatMap(creature => _._spells.foreach(s =>(s, creature._name)))
-                //.reduceByKey((res, n) => res + n)
-  //val y = temp.collect
- //print(y)
+  val temp = rdd.flatMap(creature => creature._spells.map(s => (s, creature._name)))
+  //spells.foreach(s =>(s, creature._name)))
+                .reduceByKey((res, n) => res +" + "+ n)
+ //print(temp)
+  //temp.saveAsTextFile("IndiceInverses")
+ temp.foreach(println(_))
 }
