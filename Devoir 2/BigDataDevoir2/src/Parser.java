@@ -55,30 +55,17 @@ public class Parser {
             data = data[1].split(l);
 
             String[] fSpells = data[0].split("Spell-Like Abilities");
-            if(fSpells.length != 1){
+            if(fSpells.length != 1){ //cela veut dire qu'il y a des sorts abilities
                 String[] end =  fSpells[1].split("<p class=" + Character.toString((char)34) + "stat-block-1");
-                if(end.length == 1){
-                    String[] g =fSpells[1].split("p class=" + Character.toString((char)34)
-                            + "stat-block-2"+Character.toString((char)34) + ">");
-                    for(int i = 1; i< g.length; i++){
-                        g = g[i].split("i><a");
-                        for(int j = 1; j<g.length; j++){
-                            String[] h = g[j].split(">");
-                            h = h[1].split("</a");
-                            crea.addSpell(h[0]);
-                        }
-                    }
-                }
-                else{
-                    String[] g =fSpells[1].split("p class=" + Character.toString((char)34)
-                            + "stat-block-2"+Character.toString((char)34) + ">");
-                    for(int i = 1; i< g.length; i++){
-                        g = g[i].split("i><a");
-                        for(int j = 1; j<g.length; j++){
-                            String[] h = g[j].split(">");
-                            h = h[1].split("</a");
-                            crea.addSpell(h[0]);
-                        }
+
+                String[] g =end[0].split("p class=" + Character.toString((char)34)
+                        + "stat-block-2"+Character.toString((char)34) + ">");
+                for(int i = 1; i< g.length; i++){
+                    String[] p  = g[i].split("i><a");
+                    for(int j = 1; j<p.length; j++){
+                        String[] h = p[j].split(">");
+                        h = h[1].split("</a");
+                        crea.addSpell(h[0]);
                     }
                 }
 
@@ -89,9 +76,9 @@ public class Parser {
                 String[] g =sSpells[1].split("p class=" + Character.toString((char)34)
                         + "stat-block-2"+Character.toString((char)34) + ">");
                 for(int i = 1; i< g.length; i++){
-                    g = g[i].split("i><a");
-                    for(int j = 1; j<g.length; j++){
-                        String[] h = g[j].split(">");
+                    String[] p = g[i].split("i><a");
+                    for(int j = 1; j<p.length; j++){
+                        String[] h = p[j].split(">");
                         h = h[1].split("</a");
                         crea.addSpell(h[0]);
                     }
@@ -116,31 +103,15 @@ public class Parser {
             String[] fSpells = data[0].split("Spell-Like Abilities");
             if(fSpells.length != 1){
                 String[] end =  fSpells[1].split("<p class=" + Character.toString((char)34) + "stat-block-1");
-                if(end.length == 1){
-                    String[] g =fSpells[1].split("p class=" + Character.toString((char)34)
-                            + "stat-block-2"+Character.toString((char)34) + ">");
-                    for(int i = 1; i< g.length; i++){
-                        g = g[i].split("i><a");
-                        for(int j = 1; j<g.length; j++){
-                            String[] h = g[j].split(">");
-                            h = h[1].split("</a");
-
-                            //System.out.println(h[0]);
-                            crea.addSpell(h[0]);
-                        }
-                    }
-                }
-                else{
-                    String[] g =fSpells[1].split("p class=" + Character.toString((char)34)
-                            + "stat-block-2"+Character.toString((char)34) + ">");
-                    for(int i = 1; i< g.length; i++){
-                        g = g[i].split("i><a");
-                        for(int j = 1; j<g.length; j++){
-                            String[] h = g[j].split(">");
-                            h = h[1].split("</a");
-                            //System.out.println(h[0]);
-                            crea.addSpell(h[0]);
-                        }
+                String[] g = end[0].split("p class=" + Character.toString((char)34)
+                        + "stat-block-2"+Character.toString((char)34) + ">");
+                for(int i = 1; i< g.length; i++) {
+                    String[] p  = g[i].split("i><a");
+                    for (int j = 1; j < p.length; j++) {
+                        String[] h = p[j].split(">");
+                        h = h[1].split("</a");
+                        //System.out.println(h[0]);
+                        crea.addSpell(h[0]);
                     }
                 }
 
@@ -151,9 +122,9 @@ public class Parser {
                 String[] g =sSpells[1].split("p class=" + Character.toString((char)34)
                         + "stat-block-2"+Character.toString((char)34) + ">");
                 for(int i = 1; i< g.length; i++){
-                    g = g[i].split("i><a");
-                    for(int j = 1; j<g.length; j++){
-                        String[] h = g[j].split(">");
+                    String[] p = g[i].split("i><a");
+                    for(int j = 1; j<p.length; j++){
+                        String[] h = p[j].split(">");
                         h = h[1].split("</a");
                         //System.out.println(h[0]);
                         crea.addSpell(h[0]);
