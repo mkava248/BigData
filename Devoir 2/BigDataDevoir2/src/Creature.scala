@@ -1,8 +1,12 @@
 import scala.collection.mutable.ArrayBuffer
+class Creature (var _name : String = "", var _spells : ArrayBuffer[String] = new ArrayBuffer[String]()) {
 
-class Creature(val name:String) extends Serializable{
-  var spells = ArrayBuffer[String]()
-  def addSpell(spell : String): Unit ={
-    spells += spell
+  def addSpell(spell : String ) : Unit = {
+    _spells += spell
+  }
+
+  override def toString: String = {
+    super.toString
+    "name = "+_name+", spells = "+_spells.toString()
   }
 }
