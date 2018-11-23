@@ -65,9 +65,11 @@ object test extends App {
  }*/
 
  val temp = rdd.flatMap(creature => creature._spells.map(s => (s, creature._name)))
-   //spells.foreach(s =>(s, creature._name)))
-   .reduceByKey((res, n) => res +" + "+ n)
- //print(temp)
- //temp.saveAsTextFile("IndiceInverses")
+               .reduceByKey((res, n) => res +" + "+ n)
  temp.foreach(println(_))
+
+  //-----------------------------------------
+  //Fin exercice 1
+  //-----------------------------------------
+
 }
