@@ -1,0 +1,862 @@
+name = Acid Arrow, resitance = false
+name = Acid Fog, resitance = false
+name = Acid Splash, resitance = false
+name = Aid, resitance = false
+name = Air Walk, resitance = false
+name = Align Weapon, resitance = false
+name = Alter Self, resitance = false
+name = Alarm, resitance = false
+name = Analyze Dweomer, resitance = false
+name = Animal Growth, resitance = false
+name = Animal Messenger, resitance = false
+name = Animal Shapes, resitance = false
+name = Animal Trance, resitance = false
+name = Animate Rope, resitance = false
+name = Antilife Shell, resitance = false
+name = Antipathy, resitance = false
+name = Antiplant Shell, resitance = false
+name = Arcane Eye, resitance = false
+name = Arcane Lock, resitance = false
+name = Arcane Mark, resitance = false
+name = Arcane Sight, resitance = false
+name = Arcane Sight, Greater, resitance = false
+name = Astral Projection, resitance = false
+name = Atonement, resitance = false
+name = Augury, resitance = false
+name = Awaken, resitance = false
+name = Banishment, resitance = false
+name = Bear's Endurance, resitance = false
+name = Bear's Endurance, Mass, resitance = false
+name = Beast Shape I, resitance = false
+name = Beast Shape II, resitance = false
+name = Beast Shape III, resitance = false
+name = Beast Shape IV, resitance = false
+name = Bestow Curse, resitance = false
+name = Binding, resitance = false
+name = Bleed, resitance = false
+name = Bless Water, resitance = false
+name = Bless Weapon, resitance = false
+name = Blight, resitance = false
+name = Blur, resitance = false
+name = Bull's Strength, resitance = false
+name = Bull's Strength, Mass, resitance = false
+name = Call Lightning Storm, resitance = false
+name = Calm Animals, resitance = false
+name = Calm Emotions, resitance = false
+name = Cat's Grace, resitance = false
+name = Cat's Grace, Mass, resitance = false
+name = Cause Fear, resitance = false
+name = Charm Person, resitance = false
+name = Charm Animal, resitance = false
+name = Charm Monster, resitance = false
+name = Charm Monster, Mass, resitance = false
+name = Chill Touch, resitance = false
+name = Clairaudience/Clairvoyance, resitance = false
+name = Clenched Fist, resitance = false
+name = Cloak of Chaos, resitance = false
+name = Clone, resitance = false
+name = Command, Greater, resitance = false
+name = Command Plants, resitance = false
+name = Command Undead, resitance = false
+name = Commune, resitance = false
+name = Commune with Nature, resitance = false
+name = Comprehend Languages, resitance = false
+name = Cone of Cold, resitance = false
+name = Confusion, resitance = false
+name = Confusion, Lesser, resitance = false
+name = Contact Other Plane, resitance = false
+name = Continual Flame, resitance = false
+name = Control Plants, resitance = false
+name = Control Undead, resitance = false
+name = Control Water, resitance = false
+name = Control Winds, resitance = false
+name = Create Food and Water, resitance = false
+name = Create Undead, resitance = false
+name = Create Greater Undead, resitance = false
+name = Create Water, resitance = false
+name = Creeping Doom, resitance = false
+name = Crushing Despair, resitance = false
+name = Crushing Hand, resitance = false
+name = Cure Light Wounds, Mass, resitance = false
+name = Cure Critical Wounds, Mass, resitance = false
+name = Cure Moderate Wounds, Mass, resitance = false
+name = Cure Serious Wounds, Mass, resitance = false
+name = Curse Water, resitance = false
+name = Dancing Lights, resitance = false
+name = Darkvision, resitance = false
+name = Daze, resitance = false
+name = Daze Monster, resitance = false
+name = Death Ward, resitance = false
+name = Deathwatch, resitance = false
+name = Deeper Darkness, resitance = false
+name = Delayed Blast Fireball, resitance = false
+name = Delay Poison, resitance = false
+name = Demand, resitance = false
+name = Destruction, resitance = false
+name = Detect Animals or Plants, resitance = false
+name = Detect Chaos, resitance = false
+name = Detect Evil, resitance = false
+name = Detect Good, resitance = false
+name = Detect Law, resitance = false
+name = Detect Magic, resitance = false
+name = Detect Poison, resitance = false
+name = Detect Scrying, resitance = false
+name = Detect Secret Doors, resitance = false
+name = Detect Snares and Pits, resitance = false
+name = Detect Thoughts, resitance = false
+name = Detect Undead, resitance = false
+name = Dimensional Anchor, resitance = false
+name = Dimensional Lock, resitance = false
+name = Dimension Door, resitance = false
+name = Diminish Plants, resitance = false
+name = Discern Lies, resitance = false
+name = Discern Location, resitance = false
+name = Disguise Self, resitance = false
+name = Dismissal, resitance = false
+name = Dispel Chaos, resitance = false
+name = Dispel Evil, resitance = false
+name = Dispel Good, resitance = false
+name = Dispel Law, resitance = false
+name = Dispel Magic, Greater, resitance = false
+name = Displacement, resitance = false
+name = Disrupting Weapon, resitance = false
+name = Disrupt Undead, resitance = false
+name = Divination, resitance = false
+name = Divine Power, resitance = false
+name = Dominate Animal, resitance = false
+name = Dominate Monster, resitance = false
+name = Dominate Person, resitance = false
+name = Doom, resitance = false
+name = Eagle's Splendor, resitance = false
+name = Eagle's Splendor, Mass, resitance = false
+name = Elemental Body I, resitance = false
+name = Elemental Body II, resitance = false
+name = Elemental Body III, resitance = false
+name = Elemental Body IV, resitance = false
+name = Elemental Swarm, resitance = false
+name = Energy Drain, resitance = false
+name = Enlarge Person, Mass, resitance = false
+name = Enthrall, resitance = false
+name = Erase, resitance = false
+name = Ethereal Jaunt, resitance = false
+name = Etherealness, resitance = false
+name = Explosive Runes, resitance = false
+name = Eyebite, resitance = false
+name = Fabricate, resitance = false
+name = False Life, resitance = false
+name = False Vision, resitance = false
+name = Feeblemind, resitance = false
+name = Find the Path, resitance = false
+name = Find Traps, resitance = false
+name = Fire Trap, resitance = false
+name = Flame Arrow, resitance = false
+name = Flaming Sphere, resitance = false
+name = Flare, resitance = false
+name = Flesh to Stone, resitance = false
+name = Floating Disk, resitance = false
+name = Forbiddance, resitance = false
+name = Forcecage, resitance = false
+name = Forceful Hand, resitance = false
+name = Form of the Dragon I, resitance = false
+name = Form of the Dragon II, resitance = false
+name = Form of the Dragon III, resitance = false
+name = Fox's Cunning, resitance = false
+name = Fox's Cunning, Mass, resitance = false
+name = Freedom, resitance = false
+name = Freedom of Movement, resitance = false
+name = Freezing Sphere, resitance = false
+name = Gate, resitance = false
+name = Geas/Quest, resitance = false
+name = Geas, Lesser, resitance = false
+name = Gentle Repose, resitance = false
+name = Ghost Sound, resitance = false
+name = Ghoul touch, resitance = false
+name = Giant Form I, resitance = false
+name = Giant Form II, resitance = false
+name = Giant Vermin, resitance = false
+name = Glibness, resitance = false
+name = Glitterdust, resitance = false
+name = Globe of Invulnerability, Lesser, resitance = false
+name = Glyph of Warding, Greater, resitance = false
+name = Goodberry, resitance = false
+name = Good Hope, resitance = false
+name = Grasping Hand, resitance = false
+name = Guards and Wards, resitance = false
+name = Guidance, resitance = false
+name = Hallow, resitance = false
+name = Hallucinatory Terrain, resitance = false
+name = Halt Undead, resitance = false
+name = Heal, Mass, resitance = false
+name = Heal Mount, resitance = false
+name = Helping Hand, resitance = false
+name = Heroes' Feast, resitance = false
+name = Heroism, Greater, resitance = false
+name = Hide from Animals, resitance = false
+name = Hide from Undead, resitance = false
+name = Hideous Laughter, resitance = false
+name = Hold Person, resitance = false
+name = Hold Monster, resitance = false
+name = Hold Monster, Mass, resitance = false
+name = Hold Person, Mass, resitance = false
+name = Holy Aura, resitance = false
+name = Holy Sword, resitance = false
+name = Horrid Wilting, resitance = false
+name = Hypnotic Pattern, resitance = false
+name = Hypnotism, resitance = false
+name = Identify, resitance = false
+name = Illusory Script, resitance = false
+name = Illusory Wall, resitance = false
+name = Imbue with Spell Ability, resitance = false
+name = Implosion, resitance = false
+name = Imprisonment, resitance = false
+name = Incendiary Cloud, resitance = false
+name = Inflict Critical Wounds, Mass, resitance = false
+name = Inflict Light Wounds, Mass, resitance = false
+name = Inflict Moderate Wounds, Mass, resitance = false
+name = Inflict Serious Wounds, Mass, resitance = false
+name = Insanity, resitance = false
+name = Interposing Hand, resitance = false
+name = Invisibility, Greater, resitance = false
+name = Invisibility, Mass, resitance = false
+name = Invisibility Purge, resitance = false
+name = Invisibility Sphere, resitance = false
+name = Iron Body, resitance = false
+name = Ironwood, resitance = false
+name = Irresistible Dance, resitance = false
+name = Jump, resitance = false
+name = Keen Edge, resitance = false
+name = Knock, resitance = false
+name = Know Direction, resitance = false
+name = Legend Lore, resitance = false
+name = Levitate, resitance = false
+name = Light, resitance = false
+name = Liveoak, resitance = false
+name = Locate Object, resitance = false
+name = Locate Creature, resitance = false
+name = Longstrider, resitance = false
+name = Lullaby, resitance = false
+name = Mage Hand, resitance = false
+name = Mage's Faithful Hound, resitance = false
+name = Mage's Lucubration, resitance = false
+name = Mage's Magnificent Mansion, resitance = false
+name = Mage's Private Sanctum, resitance = false
+name = Mage's Sword, resitance = false
+name = Magic Aura, resitance = false
+name = Magic Circle against Evil, resitance = false
+name = Magic Circle against Chaos, resitance = false
+name = Magic Circle against Good, resitance = false
+name = Magic Circle against Law, resitance = false
+name = Magic Fang, Greater, resitance = false
+name = Magic Jar, resitance = false
+name = Magic Mouth, resitance = false
+name = Magic Stone, resitance = false
+name = Magic Weapon, resitance = false
+name = Minor Creation, resitance = false
+name = Major Creation, resitance = false
+name = Major Image, resitance = false
+name = Mark of Justice, resitance = false
+name = Meld into Stone, resitance = false
+name = Mending, resitance = false
+name = Message, resitance = false
+name = Mind Blank, resitance = false
+name = Mind Fog, resitance = false
+name = Minor Image, resitance = false
+name = Miracle, resitance = false
+name = Mirage Arcana, resitance = false
+name = Misdirection, resitance = false
+name = Mnemonic Enhancer, resitance = false
+name = Modify Memory, resitance = false
+name = Moment of Prescience, resitance = false
+name = Mount, resitance = false
+name = Neutralize Poison, resitance = false
+name = Nondetection, resitance = false
+name = Obscure Object, resitance = false
+name = Obscuring Mist, resitance = false
+name = Open/Close, resitance = false
+name = Overland Flight, resitance = false
+name = Owl's Wisdom, resitance = false
+name = Owl's Wisdom, Mass, resitance = false
+name = Passwall, resitance = false
+name = Pass without Trace, resitance = false
+name = Permanency, resitance = false
+name = Permanent Image, resitance = false
+name = Persistent Image, resitance = false
+name = Phantom Trap, resitance = false
+name = Phase Door, resitance = false
+name = Planar Ally, Lesser, resitance = false
+name = Planar Ally, resitance = false
+name = Planar Ally, Greater, resitance = false
+name = Planar Binding, Lesser, resitance = false
+name = Planar Binding, resitance = false
+name = Planar Binding, Greater, resitance = false
+name = Plant Growth, resitance = false
+name = Plant Shape I, resitance = false
+name = Plant Shape II, resitance = false
+name = Plant Shape III, resitance = false
+name = Poison, resitance = false
+name = Polymorph, resitance = false
+name = Polymorph, Greater, resitance = false
+name = Polymorph Any Object, resitance = false
+name = Power Word Blind, resitance = false
+name = Power Word Stun, resitance = false
+name = Prestidigitation, resitance = false
+name = Prismatic Wall, resitance = false
+name = Prying Eyes, Greater, resitance = false
+name = Produce Flame, resitance = false
+name = Programmed Image, resitance = false
+name = Project Image, resitance = false
+name = Protection from Spells, resitance = false
+name = Purify Food and Drink, resitance = false
+name = Pyrotechnics, resitance = false
+name = Quench, resitance = false
+name = Rage, resitance = false
+name = Rainbow Pattern, resitance = false
+name = Raise Dead, resitance = false
+name = Ray of Exhaustion, resitance = false
+name = Ray of Frost, resitance = false
+name = Read Magic, resitance = false
+name = Reduce Animal, resitance = false
+name = Reduce Person, Mass, resitance = false
+name = Refuge, resitance = false
+name = Reincarnate, resitance = false
+name = Remove Blindness/Deafness, resitance = false
+name = Remove Curse, resitance = false
+name = Remove Disease, resitance = false
+name = Remove Fear, resitance = false
+name = Remove Paralysis, resitance = false
+name = Repel Metal or Stone, resitance = false
+name = Repel Vermin, resitance = false
+name = Repulsion, resitance = false
+name = Resilient Sphere, resitance = false
+name = Resistance, resitance = false
+name = Restoration, resitance = false
+name = Restoration, Greater, resitance = false
+name = Restoration, Lesser, resitance = false
+name = Resurrection, resitance = false
+name = Righteous Might, resitance = false
+name = Rope Trick, resitance = false
+name = Rusting Grasp, resitance = false
+name = Scare, resitance = false
+name = Scintillating Pattern, resitance = false
+name = Screen, resitance = false
+name = Scrying, resitance = false
+name = Scrying, Greater, resitance = false
+name = Sculpt Sound, resitance = false
+name = Secret Chest, resitance = false
+name = Secret Page, resitance = false
+name = Secure Shelter, resitance = false
+name = See Invisibility, resitance = false
+name = Seeming, resitance = false
+name = Sending, resitance = false
+name = Sepia Snake Sigil, resitance = false
+name = Sequester, resitance = false
+name = Shadow Conjuration, resitance = false
+name = Shades, resitance = false
+name = Shadow Conjuration, Greater, resitance = false
+name = Shadow Evocation, resitance = false
+name = Shadow Evocation, Greater, resitance = false
+name = Shadow Walk, resitance = false
+name = Shambler, resitance = false
+name = Shapechange, resitance = false
+name = Shield, resitance = false
+name = Shield of Law, resitance = false
+name = Shillelagh, resitance = false
+name = Shrink Item, resitance = false
+name = Shout, Greater, resitance = false
+name = Simulacrum, resitance = false
+name = Slay Living, resitance = false
+name = Sleet Storm, resitance = false
+name = Snare, resitance = false
+name = Soften Earth and Stone, resitance = false
+name = Song of Discord, resitance = false
+name = Soul Bind, resitance = false
+name = Sound Burst, resitance = false
+name = Speak with Animals, resitance = false
+name = Speak with Dead, resitance = false
+name = Speak with Plants, resitance = false
+name = Spectral Hand, resitance = false
+name = Spell Immunity, resitance = false
+name = Spell Immunity, Greater, resitance = false
+name = Spell Resistance, resitance = false
+name = Spellstaff, resitance = false
+name = Spell Turning, resitance = false
+name = Spike Growth, resitance = false
+name = Stabilize, resitance = false
+name = Statue, resitance = false
+name = Status, resitance = false
+name = Stone Tell, resitance = false
+name = Stone to Flesh, resitance = false
+name = Suggestion, Mass, resitance = false
+name = Summon Instrument, resitance = false
+name = Summon Monster I, resitance = false
+name = Summon Monster II, resitance = false
+name = Summon Monster III, resitance = false
+name = Summon Monster IV, resitance = false
+name = Summon Monster V, resitance = false
+name = Summon Monster VI, resitance = false
+name = Summon Monster VIII, resitance = false
+name = Summon Monster VII, resitance = false
+name = Summon Monster IX, resitance = false
+name = Summon Nature's Ally I, resitance = false
+name = Summon Nature's Ally II, resitance = false
+name = Summon Nature's Ally III, resitance = false
+name = Summon Nature's Ally IV, resitance = false
+name = Summon Nature's Ally V, resitance = false
+name = Summon Nature's Ally VI, resitance = false
+name = Summon Nature's Ally VII, resitance = false
+name = Summon Nature's Ally VIII, resitance = false
+name = Summon Nature's Ally IX, resitance = false
+name = Sunburst, resitance = false
+name = Symbol of Death, resitance = false
+name = Symbol of Fear, resitance = false
+name = Symbol of Insanity, resitance = false
+name = Symbol of Pain, resitance = false
+name = Symbol of Persuasion, resitance = false
+name = Symbol of Sleep, resitance = false
+name = Symbol of Stunning, resitance = false
+name = Symbol Of Weakness, resitance = false
+name = Sympathetic Vibration, resitance = false
+name = Sympathy, resitance = false
+name = Telekinetic Sphere, resitance = false
+name = Telepathic Bond, resitance = false
+name = Teleport, resitance = false
+name = Teleport, Greater, resitance = false
+name = Teleport Object, resitance = false
+name = Teleportation Circle, resitance = false
+name = Temporal Stasis, resitance = false
+name = Tiny Hut, resitance = false
+name = Tongues, resitance = false
+name = Touch of Fatigue, resitance = false
+name = Touch of Idiocy, resitance = false
+name = Transmute Metal to Wood, resitance = false
+name = Transmute Mud to Rock, resitance = false
+name = Transmute Rock to Mud, resitance = false
+name = Transport via Plants, resitance = false
+name = Trap the Soul, resitance = false
+name = Tree Shape, resitance = false
+name = Tree Stride, resitance = false
+name = True Resurrection, resitance = false
+name = True Seeing, resitance = false
+name = Undeath to Death, resitance = false
+name = Undetectable Alignment, resitance = false
+name = Unhallow, resitance = false
+name = Unholy Aura, resitance = false
+name = Unseen Servant, resitance = false
+name = Veil, resitance = false
+name = Ventriloquism, resitance = false
+name = Virtue, resitance = false
+name = Vision, resitance = false
+name = Wail of the Banshee, resitance = false
+name = Wall of Iron, resitance = false
+name = Warp Wood, resitance = false
+name = Water Breathing, resitance = false
+name = Water Walk, resitance = false
+name = Waves of Exhaustion, resitance = false
+name = Waves of Fatigue, resitance = false
+name = Weird, resitance = false
+name = Whirlwind, resitance = false
+name = Whispering Wind, resitance = false
+name = Wind Walk, resitance = false
+name = Wind Wall, resitance = false
+name = Wish, resitance = false
+name = Wood Shape, resitance = false
+name = Word of Recall, resitance = false
+name = Zone of Silence, resitance = false
+name = Zone of Truth, resitance = false
+name = Agonize, resitance = false
+name = Hellfire Ray, resitance = false
+name = Sacrifice, resitance = false
+name = Aura of the Unremarkable, resitance = false
+name = Burning Disarm, resitance = false
+name = Dweomer Retaliation, resitance = false
+name = Emergency Force Sphere, resitance = false
+name = Signifer's Rally, resitance = false
+name = Twine Double, resitance = false
+name = Fear, resitance = false
+name = Hold Animal, resitance = false
+name = Insect Plague, resitance = false
+name = Prying Eyes, resitance = false
+name = Instant Summons, resitance = false
+name = Spellcasting Contract, Lesser, resitance = false
+name = Spellcasting Contract, resitance = false
+name = Spellcasting Contract, Greater, resitance = false
+name = Ancestral Communion, resitance = false
+name = Ancestral Gift, resitance = false
+name = Summon Ancestral Guardian, resitance = false
+name = See Through Stone, resitance = false
+name = Rune of Durability, resitance = false
+name = Rune of Warding, resitance = false
+name = Detect Charm, resitance = false
+name = Liberating Comand, resitance = false
+name = Suppres Charms and Compulsions, resitance = false
+name = Summon Flight of Eagles, resitance = false
+name = Genius Avaricious, resitance = false
+name = Protection from Energy, resitance = false
+name = Tracking Mark, resitance = false
+name = Retrieve Item, resitance = false
+name = Spherescry, resitance = false
+name = Illusory Poison, resitance = false
+name = Arcane Reinforcement, resitance = false
+name = Canopic Conversion, resitance = false
+name = Chastise, resitance = false
+name = Summon Elemental Steed, resitance = false
+name = Hibernate, resitance = false
+name = Mark of Blood, resitance = false
+name = Sotto Voce, resitance = false
+name = Tomb Legion, resitance = false
+name = Tripvine, resitance = false
+name = Ape Walk, resitance = false
+name = Defoliate, resitance = false
+name = Heatstroke, resitance = false
+name = Swallow Your Fear, resitance = false
+name = Blood Rage, resitance = false
+name = Shield the Banner, resitance = false
+name = Vigor, resitance = false
+name = Absorbing Touch, resitance = false
+name = Accelerate Poison, resitance = false
+name = Acid Pit, resitance = false
+name = Alchemical Allocation, resitance = false
+name = Allfood, resitance = false
+name = Alter Winds, resitance = false
+name = Amplify Elixir, resitance = false
+name = Ant Haul, resitance = false
+name = Aqueous Orb, resitance = false
+name = Arcane Concordance, resitance = false
+name = Arrow Eruption, resitance = false
+name = Aspect of the Bear, resitance = false
+name = Aspect of the Falcon, resitance = false
+name = Aspect of the Stag, resitance = false
+name = Aspect of the Wolf, resitance = false
+name = Aura of Greater Courage, resitance = false
+name = Ball Lightning, resitance = false
+name = Banish Seeming, resitance = false
+name = Bard's Escape, resitance = false
+name = Beguiling Gift, resitance = false
+name = Bestow Grace, resitance = false
+name = Blaze of Glory, resitance = false
+name = Blessing of the Salamander, resitance = false
+name = Blood Biography, resitance = false
+name = Bloodhound, resitance = false
+name = Bloody Claws, resitance = false
+name = Bomber's Eye, resitance = false
+name = Borrow Fortune, resitance = false
+name = Borrow Skill, resitance = false
+name = Bow Spirit, resitance = false
+name = Brand, resitance = false
+name = Brand, Greater, resitance = false
+name = Brilliant Inspiration, resitance = false
+name = Bristle, resitance = false
+name = Burst Bonds, resitance = false
+name = Cacophonous Call, resitance = false
+name = Cacophonous Call, Mass, resitance = false
+name = Calcific Touch, resitance = false
+name = Campfire Wall, resitance = false
+name = Cast Out, resitance = false
+name = Castigate, resitance = false
+name = Castigate, Mass, resitance = false
+name = Challenge Evil, resitance = false
+name = Chameleon Stride, resitance = false
+name = Clashing Rocks, resitance = false
+name = Cleanse, resitance = false
+name = Cloak of Dreams, resitance = false
+name = Cloak of Shade, resitance = false
+name = Cloak of Winds, resitance = false
+name = Confess, resitance = false
+name = Contagious Flame, resitance = false
+name = Coordinated Effort, resitance = false
+name = Corruption Resistance, resitance = false
+name = Coward's Lament, resitance = false
+name = Crafter's Curse, resitance = false
+name = Crafter's Fortune, resitance = false
+name = Create Pit, resitance = false
+name = Create Treasure Map, resitance = false
+name = Dancing Lantern, resitance = false
+name = Deadly Finale, resitance = false
+name = Deafening Song Bolt, resitance = false
+name = Deflection, resitance = false
+name = Delayed Consumption, resitance = false
+name = Denounce, resitance = false
+name = Detect Aberration, resitance = false
+name = Detonate, resitance = false
+name = Divine Transfer, resitance = false
+name = Divine Vessel, resitance = false
+name = Eagle Eye, resitance = false
+name = Elemental Aura, resitance = false
+name = Elemental Speech, resitance = false
+name = Elemental Touch, resitance = false
+name = Elude Time, resitance = false
+name = Enter Image, resitance = false
+name = Euphoric Tranquility, resitance = false
+name = Evolution Surge, Lesser, resitance = false
+name = Evolution Surge, resitance = false
+name = Evolution Surge, Greater, resitance = false
+name = Expeditious Excavation, resitance = false
+name = Expend, resitance = false
+name = Feather Step, resitance = false
+name = Feather Step, Mass, resitance = false
+name = Fester, resitance = false
+name = Fester, Mass, resitance = false
+name = Fiery Body, resitance = false
+name = Fire Breath, resitance = false
+name = Fire of Entanglement, resitance = false
+name = Fire of Judgment, resitance = false
+name = Fire of Vengeance, resitance = false
+name = Firebrand, resitance = false
+name = Firefall, resitance = false
+name = Flare Burst, resitance = false
+name = Fluid Form, resitance = false
+name = Fly, Mass, resitance = false
+name = Foe to Friend, resitance = false
+name = Follow Aura, resitance = false
+name = Fool's Forbiddance, resitance = false
+name = Forced Repentance, resitance = false
+name = Frozen Note, resitance = false
+name = Gallant Inspiration, resitance = false
+name = Getaway, resitance = false
+name = Geyser, resitance = false
+name = Ghostbane Dirge, resitance = false
+name = Ghostbane Dirge, Mass, resitance = false
+name = Glide, resitance = false
+name = Grace, resitance = false
+name = Gravity Bow, resitance = false
+name = Grove of Respite, resitance = false
+name = Guiding Star, resitance = false
+name = Heroic Finale, resitance = false
+name = Hero's Defiance, resitance = false
+name = Hidden Speech, resitance = false
+name = Hide Campsite, resitance = false
+name = Holy Whisper, resitance = false
+name = Honeyed Tongue, resitance = false
+name = Hungry Pit, resitance = false
+name = Innocence, resitance = false
+name = Instant Armor, resitance = false
+name = Instant Enemy, resitance = false
+name = Invigorate, resitance = false
+name = Invigorate, Mass, resitance = false
+name = Jester's Jaunt, resitance = false
+name = Keen Senses, resitance = false
+name = King's Castle, resitance = false
+name = Knight's Calling, resitance = false
+name = Lead Blades, resitance = false
+name = Life Bubble, resitance = false
+name = Light Lance, resitance = false
+name = Lily Pad Stride, resitance = false
+name = Lockjaw, resitance = false
+name = Marks Of Forbiddance, resitance = false
+name = Mask Dweomer, resitance = false
+name = Memory Lapse, resitance = false
+name = Moonstruck, resitance = false
+name = Nap Stack, resitance = false
+name = Natural Rhythm, resitance = false
+name = Nature's Exile, resitance = false
+name = Negate Aroma, resitance = false
+name = Oracle's Burden, resitance = false
+name = Pain Strike, resitance = false
+name = Pain Strike, Mass, resitance = false
+name = Paladin's Sacrifice, resitance = false
+name = Phantasmal Revenge, resitance = false
+name = Phantasmal Web, resitance = false
+name = Pied Piping, resitance = false
+name = Planar Adaptation, resitance = false
+name = Planar Adaptation, Mass, resitance = false
+name = Protective Spirit, resitance = false
+name = Purging Finale, resitance = false
+name = Purified Calling, resitance = false
+name = Putrefy Food and Drink, resitance = false
+name = Rally Point, resitance = false
+name = Rebuke, resitance = false
+name = Rampart, resitance = false
+name = Rejuvenate Eidolon, Lesser, resitance = false
+name = Rejuvenate Eidolon, resitance = false
+name = Rejuvenate Eidolon, Greater, resitance = false
+name = Resounding Blow, resitance = false
+name = Rest Eternal, resitance = false
+name = Restful Sleep, resitance = false
+name = Resurgent Transformation, resitance = false
+name = Retribution, resitance = false
+name = Reviving Finale, resitance = false
+name = Righteous Vigor, resitance = false
+name = River of Wind, resitance = false
+name = Sacrificial Oath, resitance = false
+name = Saddle Surge, resitance = false
+name = Scent Trail, resitance = false
+name = Screech, resitance = false
+name = Sculpt Corpse, resitance = false
+name = Seamantle, resitance = false
+name = Seek Thoughts, resitance = false
+name = Share Language, resitance = false
+name = Shadow Projection, resitance = false
+name = Share Senses, resitance = false
+name = Shifting Sand, resitance = false
+name = Shared Wrath, resitance = false
+name = Sift, resitance = false
+name = Sirocco, resitance = false
+name = Sleepwalk, resitance = false
+name = Slipstream, resitance = false
+name = Snake Staff, resitance = false
+name = Solid Note, resitance = false
+name = Spark, resitance = false
+name = Spiked Pit, resitance = false
+name = Spiritual Ally, resitance = false
+name = Spite, resitance = false
+name = Stay the Hand, resitance = false
+name = Stone Call, resitance = false
+name = Stone Fist, resitance = false
+name = Stormbolts, resitance = false
+name = Strong Jaw, resitance = false
+name = Stumble Gap, resitance = false
+name = Stunning Finale, resitance = false
+name = Suffocation, resitance = false
+name = Suffocation, Mass, resitance = false
+name = Summon Eidolon, resitance = false
+name = Swarm Skin, resitance = false
+name = Thorn Body, resitance = false
+name = Threefold Aspect, resitance = false
+name = Thundering Drums, resitance = false
+name = Timely Inspiration, resitance = false
+name = Tireless Pursuit, resitance = false
+name = Tireless Pursuers, resitance = false
+name = Touch of Gracelessness, resitance = false
+name = Touch of the Sea, resitance = false
+name = Transmogrify, resitance = false
+name = Transmute Potion to Poison, resitance = false
+name = Treasure Stitching, resitance = false
+name = Twilight Knife, resitance = false
+name = Twin Form, resitance = false
+name = Unfetter, resitance = false
+name = Universal Formula, resitance = false
+name = Unwilling Shield, resitance = false
+name = Unwitting Ally, resitance = false
+name = Vanish, resitance = false
+name = Veil of Positive Energy, resitance = false
+name = Venomous Bolt, resitance = false
+name = Versatile Weapon, resitance = false
+name = Vomit Swarm, resitance = false
+name = Vortex, resitance = false
+name = Wake of Light, resitance = false
+name = Wall of Lava, resitance = false
+name = Wall of Suppression, resitance = false
+name = Wandering Star Motes, resitance = false
+name = Ward the Faithful, resitance = false
+name = Weapon of Awe, resitance = false
+name = Winds of Vengeance, resitance = false
+name = World Wave, resitance = false
+name = Wrath, resitance = false
+name = Wrathful Mantle, resitance = false
+name = Ice Armor, resitance = false
+name = Hunter's Eye, resitance = false
+name = Hunter's Howl, resitance = false
+name = Perceive Cues, resitance = false
+name = Residual Tracking, resitance = false
+name = Blessing of Courage and Life, resitance = false
+name = Rift of Ruin, resitance = false
+name = Fractions of Heal and Harm, resitance = false
+name = Constricting Coils, resitance = false
+name = Ancestral Memory, resitance = false
+name = Infernal Healing, resitance = false
+name = Infernal Healing, Greater, resitance = false
+name = Lover's Vengeance, resitance = false
+name = Teleport Trap, resitance = false
+name = Unbreakable Heart, resitance = false
+name = Vermin Shape I, resitance = false
+name = Vermin Shape II, resitance = false
+name = Vision of Lamashtu, resitance = false
+name = Smite Abomination, resitance = false
+name = Enhance Water, resitance = false
+name = Hairline Fractures, resitance = false
+name = Haze of Dreams, resitance = false
+name = Tap Inner Beauty, resitance = false
+name = Trail of the Rose, resitance = false
+name = Weapons Against Evil, resitance = false
+name = Acidic Spray, resitance = false
+name = Acute Senses, resitance = false
+name = Age Resistance, Lesser, resitance = false
+name = Age Resistance, Greater, resitance = false
+name = Age Resistance, resitance = false
+name = Allegro, resitance = false
+name = Animate Dead, Lesser, resitance = false
+name = Anthropomorphic Animal, resitance = false
+name = Arcana Theft, resitance = false
+name = Archon's Aura, resitance = false
+name = Arrow of Law, resitance = false
+name = Ash Storm, resitance = false
+name = Astral Projection, Lesser, resitance = false
+name = Atavism, resitance = false
+name = Atavism, Mass, resitance = false
+name = Aura of Doom, resitance = false
+name = Badger's Ferocity, resitance = false
+name = Battlemind Link, resitance = false
+name = Bestow Grace of the Champion, resitance = false
+name = Blade of Bright Victory, resitance = false
+name = Blade of Dark Triumph, resitance = false
+name = Blessing of the Mole, resitance = false
+name = Blood Mist, resitance = false
+name = Blood Transcription, resitance = false
+name = Bungle, resitance = false
+name = Burst of Nettles, resitance = false
+name = Cackling Skull, resitance = false
+name = Call Construct, resitance = false
+name = Caustic Eruption, resitance = false
+name = Circle Of Clarity, resitance = false
+name = Cold Ice Strike, resitance = false
+name = Compassionate Ally, resitance = false
+name = Contagion, Greater, resitance = false
+name = Control Construct, resitance = false
+name = Control Summoned Creature, resitance = false
+name = Corrosive Consumption, resitance = false
+name = Corrosive Touch, resitance = false
+name = Countless Eyes, resitance = false
+name = Create Demiplane, resitance = false
+name = Create Demiplane, Lesser, resitance = false
+name = Create Demiplane, Greater, resitance = false
+name = Curse, Major, resitance = false
+name = Curse Of Disgust, resitance = false
+name = Curse of Magic Negation, resitance = false
+name = Cursed Earth, resitance = false
+name = Cushioning Bands, resitance = false
+name = Dance of a Hundred Cuts, resitance = false
+name = Dance of a Thousand Cuts, resitance = false
+name = Darkvision, Greater, resitance = false
+name = Daze, Mass, resitance = false
+name = Decompose Corpse, resitance = false
+name = Defensive Shock, resitance = false
+name = Delay Pain, resitance = false
+name = Delusional Pride, resitance = false
+name = Diagnose Disease, resitance = false
+name = Disguise Other, resitance = false
+name = Distracting Cacophony, resitance = false
+name = Distressing Tone, resitance = false
+name = Dread Bolt, resitance = false
+name = Eagle Aerie, resitance = false
+name = Echolocation, resitance = false
+name = Eldritch Fever, resitance = false
+name = Envious Urge, resitance = false
+name = Epidemic, resitance = false
+name = Eruptive Pustules, resitance = false
+name = Excruciating Deformation, resitance = false
+name = Exquisite Accompaniment, resitance = false
+name = False Life, Greater, resitance = false
+name = Familiar Melding, resitance = false
+name = Fickle Winds, resitance = false
+name = Fleshworm Infestation, resitance = false
+name = Forbid Action, resitance = false
+name = Forbid Action, Greater, resitance = false
+name = Force Hook Charge, resitance = false
+name = Force Punch, resitance = false
+name = Forced Quiet, resitance = false
+name = Frigid Touch, resitance = false
+name = Frostbite, resitance = false
+name = Fumbletongue, resitance = false
+name = Fungal Infestation, resitance = false
+name = Ghostly Disguise, resitance = false
+name = Haunting Choir, resitance = false
+name = Haunting Mists, resitance = false
+name = Holy Ice, resitance = false
+name = Holy Shield, resitance = false
+name = Horn of Pursuit, resitance = false
+name = Howling Agony, resitance = false
+name = Ice Body, resitance = false
+name = Ice Crystal Teleport, resitance = false
+name = Icicle Dagger, resitance = false
+name = Icy Prison, resitance = false
+name = Icy Prison, Mass, resitance = false

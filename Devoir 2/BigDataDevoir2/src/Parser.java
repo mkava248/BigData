@@ -1,6 +1,12 @@
 import java.util.ArrayList;
 
 public class Parser {
+    /**
+     * Permet d'obtenir la liste de tous les liens pour chaque créature
+     *
+     * @param codeSource (String)
+     * @return result (ArrayList<String>)
+     */
     public static ArrayList<String> parseBestiaryLinks(String codeSource){
         ArrayList<String> result = new ArrayList<String>();
         String sentence = "<div id=" + Character.toString((char)34)
@@ -20,6 +26,14 @@ public class Parser {
         return result;
     }
 
+    /**
+     * Permet d'obtenir un objet creature en java à partir du code source
+     *
+     * @param codeSource (String)
+     * @param link (String)
+     * @return creature (CreatureJava)
+     * @throws Exception
+     */
     public static CreatureJava parseBestiary(String codeSource, String link) throws Exception{
         CreatureJava crea = new CreatureJava();
         String[] d = link.split("#");
@@ -134,5 +148,31 @@ public class Parser {
 
         }
         return crea;
+    }
+
+    public static SpellJava parseSpell(String codeSource){
+        SpellJava spell = new SpellJava();
+
+        String[] nameS = codeSource.split("<div class=" + Character.toString((char)39)
+                +"heading" + Character.toString((char)39) + "><P>");
+        if(nameS.length != 2){
+            return null;
+        }
+        nameS = nameS[1].split("</p>");
+        spell.setName(nameS[0]);
+
+        if(codeSource.indexOf("Spell Resistance") == -1){
+            spell.setSpellResistance(false);
+        }
+        else {
+            String[] s = codeSource.split("Spell Resistance</b>");
+            s = s[1].split("<");
+            if (s[0].indexOf("yes") != -1)
+                spell.setSpellResistance(true);
+            else
+                spell.setSpellResistance(false);
+        }
+
+        return spell;
     }
 }

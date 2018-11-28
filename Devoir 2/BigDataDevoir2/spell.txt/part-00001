@@ -1,0 +1,863 @@
+name = Imbue with Aura, resitance = false
+name = Interplanetary Teleport, resitance = false
+name = Interrogation, resitance = false
+name = Interrogation, Greater, resitance = false
+name = Joyful Rapture, resitance = false
+name = Ki Arrow, resitance = false
+name = Ki Leech, resitance = false
+name = Ki Shout, resitance = false
+name = Leashed Shackles, resitance = false
+name = Lend Judgment, resitance = false
+name = Lend Judgment, Greater, resitance = false
+name = Loathsome Veil, resitance = false
+name = Lunar Veil, resitance = false
+name = Mad Hallucination, resitance = false
+name = Mad Monkeys, resitance = false
+name = Malfunction, resitance = false
+name = Malicious Spite, resitance = false
+name = Marionette Possession, resitance = false
+name = Masterwork Transformation, resitance = false
+name = Miserable Pity, resitance = false
+name = Oppressive Boredom, resitance = false
+name = Oracle's Vessel, resitance = false
+name = Overwhelming Grief, resitance = false
+name = Overwhelming Presence, resitance = false
+name = Persuasive Goad, resitance = false
+name = Piercing Shriek, resitance = false
+name = Plague Carrier, resitance = false
+name = Plague Storm, resitance = false
+name = Play Instrument, resitance = false
+name = Polar Midnight, resitance = false
+name = Polypurpose Panacea, resitance = false
+name = Possess Object, resitance = false
+name = Prediction of Failure, resitance = false
+name = Primal Scream, resitance = false
+name = Protective Penumbra, resitance = false
+name = Rain of Frogs, resitance = false
+name = Raise Animal Companion, resitance = false
+name = Rapid Repair, resitance = false
+name = Ray of Sickening, resitance = false
+name = Reckless Infatuation, resitance = false
+name = Remove Sickness, resitance = false
+name = Reprobation, resitance = false
+name = Restore Corpse, resitance = false
+name = Restore Eidolon, resitance = false
+name = Restore Eidolon, Lesser, resitance = false
+name = Ride the Lightning, resitance = false
+name = Ride The Waves, resitance = false
+name = Sanctify Corpse, resitance = false
+name = Sands of Time, resitance = false
+name = Sculpt Simulacrum, resitance = false
+name = Serenity, resitance = false
+name = Shadowbard, resitance = false
+name = Shadow Step, resitance = false
+name = Shard of Chaos, resitance = false
+name = Share Memory, resitance = false
+name = Simulacrum, Lesser, resitance = false
+name = Skinsend, resitance = false
+name = Smug Narcissism, resitance = false
+name = Snapdragon Fireworks, resitance = false
+name = Sonic Thrust, resitance = false
+name = Soothe Construct, resitance = false
+name = Spear Of Purity, resitance = false
+name = Spit Venom, resitance = false
+name = Steal Voice, resitance = false
+name = Summon Elder Worm, resitance = false
+name = Summon Froghemoth, resitance = false
+name = Summon Minor Ally, resitance = false
+name = Summon Minor Monster, resitance = false
+name = Symbol of Healing, resitance = false
+name = Symbol of Mirroring, resitance = false
+name = Symbol of Revelation, resitance = false
+name = Symbol of Scrying, resitance = false
+name = Symbol of Sealing, resitance = false
+name = Symbol of Slowing, resitance = false
+name = Symbol of Strife, resitance = false
+name = Symbol of Vulnerability, resitance = false
+name = Tar Ball, resitance = false
+name = Temporary Resurrection, resitance = false
+name = Terrible Remorse, resitance = false
+name = Touch of Slime, resitance = false
+name = Toxic Gift, resitance = false
+name = Transmute Blood To Acid, resitance = false
+name = Unadulterated Loathing, resitance = false
+name = Unbreakable Construct, resitance = false
+name = Undead Anatomy I, resitance = false
+name = Undead Anatomy II, resitance = false
+name = Undead Anatomy III, resitance = false
+name = Undead Anatomy IV, resitance = false
+name = Unholy Ice, resitance = false
+name = Unholy Sword, resitance = false
+name = Unnatural Lust, resitance = false
+name = Unprepared Combatant, resitance = false
+name = Utter Contempt, resitance = false
+name = Vengeful Outrage, resitance = false
+name = Vermin Shape I, resitance = false
+name = Vermin Shape II, resitance = false
+name = Vestment of the Champion, resitance = false
+name = Virtuoso Performance, resitance = false
+name = Vision of Hell, resitance = false
+name = Vitriolic Mist, resitance = false
+name = Vocal Alteration, resitance = false
+name = Volcanic Storm, resitance = false
+name = Wall of Sound, resitance = false
+name = Wartrain Mount, resitance = false
+name = Waves of Ecstasy, resitance = false
+name = Web Shelter, resitance = false
+name = Witness, resitance = false
+name = Wooden Phalanx, resitance = false
+name = Word of Resolve, resitance = false
+name = Youthful Appearance, resitance = false
+name = Staggering Fall, resitance = false
+name = Greensight, resitance = false
+name = Sheet Lightning, resitance = false
+name = Breeze, resitance = false
+name = Drench, resitance = false
+name = Jolt, resitance = false
+name = Penumbra, resitance = false
+name = Root, resitance = false
+name = Scoop, resitance = false
+name = Dazzling Blade, resitance = false
+name = Dazzling Blade, Mass, resitance = false
+name = Summon Accuser, resitance = false
+name = Summon Infernal Host, resitance = false
+name = Echean's Excellent Enclosure, resitance = false
+name = Ablative Sphere, resitance = false
+name = Burning Arc, resitance = false
+name = Cultural Adaptation, resitance = false
+name = Snow Shape, resitance = false
+name = Summon Totem Creature, resitance = false
+name = Battering Blast, resitance = false
+name = Undeath Ward, resitance = false
+name = Fairness, resitance = false
+name = Seducer's Eyes, resitance = false
+name = Lighten Object, resitance = false
+name = Lighten Object, Mass, resitance = false
+name = Read Weather, resitance = false
+name = Sky Swim, resitance = false
+name = Abstemiousness, resitance = false
+name = Spell Gauge, resitance = false
+name = Early Judgment, resitance = false
+name = Silk To Steel, resitance = false
+name = Aram Zey's Focus, resitance = false
+name = Aram Zey's Trap Ward, resitance = false
+name = Bite the Hand, resitance = false
+name = Bite the Hand, Mass, resitance = false
+name = Corpse Lanterns, resitance = false
+name = Gilded Whispers, resitance = false
+name = Lipstitch, resitance = false
+name = Petulengro's Validation, resitance = false
+name = Sequester Thoughts, resitance = false
+name = Sharesister, resitance = false
+name = Stalwart Resolve, resitance = false
+name = Stolen Light, resitance = false
+name = Twisted Innards, resitance = false
+name = Blot, resitance = false
+name = Fire Sneeze, resitance = false
+name = Limp Lash, resitance = false
+name = Bladed Dash, resitance = false
+name = Bladed Dash, Greater, resitance = false
+name = Blast Barrier, resitance = false
+name = Call Weapon, resitance = false
+name = Eaglesoul, resitance = false
+name = Eldritch Conduit, resitance = false
+name = Eldritch Conduit, Greater, resitance = false
+name = Forceful Strike, resitance = false
+name = Geb's Hammer, resitance = false
+name = Geniekind, resitance = false
+name = Hungry Darkness, resitance = false
+name = Hunter's Lore, resitance = false
+name = Ice Spears, resitance = false
+name = Impart Mind, resitance = false
+name = Khain's Army, resitance = false
+name = Kiss of the First World, resitance = false
+name = Light of Iomedae, resitance = false
+name = Martial Marionette, resitance = false
+name = Martyr's Bargain, resitance = false
+name = Music of the Spheres, resitance = false
+name = Orchid's Drop, resitance = false
+name = Pugwampi's Grace, resitance = false
+name = Shadow Barbs, resitance = false
+name = Shining Cord, resitance = false
+name = Siphon Magic, resitance = false
+name = Song of Kyonin, resitance = false
+name = Spell Absorption, resitance = false
+name = Spell Absorption, Greater, resitance = false
+name = Spellscar, resitance = false
+name = Suppress Primal Magic, resitance = false
+name = Tattoo Potion, resitance = false
+name = Transfer Tattoo, resitance = false
+name = Vengeful Comets, resitance = false
+name = Vex Giant, resitance = false
+name = Weaponwand, resitance = false
+name = Zone of Foul Flames, resitance = false
+name = Absorb Toxicity, resitance = false
+name = Abundant Ammunition, resitance = false
+name = Adjuring Step, resitance = false
+name = Adoration, resitance = false
+name = Air Bubble, resitance = false
+name = Air Walk, Communal, resitance = false
+name = Animal Aspect, Greater, resitance = false
+name = Ant Haul, Communal, resitance = false
+name = Arcane Cannon, resitance = false
+name = Bestow Weapon Proficiency, resitance = false
+name = Bowstaff, resitance = false
+name = Brow Gasher, resitance = false
+name = Bullet Shield, resitance = false
+name = Burst of Speed, resitance = false
+name = Caging Bomb Admixture, resitance = false
+name = Certain Grip, resitance = false
+name = Chain of Perdition, resitance = false
+name = Companion Mind Link, resitance = false
+name = Compel Hostility, resitance = false
+name = Damp Powder, resitance = false
+name = Darkvision, Communal, resitance = false
+name = Deadly Juggernaut, resitance = false
+name = Deadeye's Lore, resitance = false
+name = Debilitating Portent, resitance = false
+name = Delay Poison, Communal, resitance = false
+name = Destabilize Powder, resitance = false
+name = Discovery Torch, resitance = false
+name = Divine Arrow, resitance = false
+name = Dust Form, resitance = false
+name = Effortless Armor, resitance = false
+name = Endure Elements, Communal, resitance = false
+name = Energy Siege Shot, resitance = false
+name = Energy Siege Shot, Greater, resitance = false
+name = Fabricate Bullets, resitance = false
+name = Fiery Shuriken, resitance = false
+name = Find Quarry, resitance = false
+name = Flash Fire, resitance = false
+name = Forest Friend, resitance = false
+name = Frightful Aspect, resitance = false
+name = Frost Fall, resitance = false
+name = Haunted Fey Aspect, resitance = false
+name = Heroic Invocation, resitance = false
+name = Hostile Juxtaposition, resitance = false
+name = Hostile Juxtaposition, Greater, resitance = false
+name = Hostile Levitation, resitance = false
+name = Illusion of Calm, resitance = false
+name = Instrument of Agony, resitance = false
+name = Jolting Portent, resitance = false
+name = Judgment Light, resitance = false
+name = Jury-Rig, resitance = false
+name = Kinetic Reverberation, resitance = false
+name = Languid Bomb Admixture, resitance = false
+name = Liberating Command, resitance = false
+name = Life Conduit, resitance = false
+name = Life Conduit, Greater, resitance = false
+name = Life Conduit, Improved, resitance = false
+name = Lightning Lash Bomb Admixture, resitance = false
+name = Litany of Defense, resitance = false
+name = Litany Of Eloquence, resitance = false
+name = Litany of Entanglement, resitance = false
+name = Litany of Escape, resitance = false
+name = Litany Of Madness, resitance = false
+name = Litany of Righteousness, resitance = false
+name = Litany of Sight, resitance = false
+name = Litany of Sloth, resitance = false
+name = Litany of Thunder, resitance = false
+name = Litany Of Vengeance, resitance = false
+name = Litany of Warding, resitance = false
+name = Litany of Weakness, resitance = false
+name = Locate Weakness, resitance = false
+name = Lock Gaze, resitance = false
+name = Longshot, resitance = false
+name = Magic Siege Engine, resitance = false
+name = Magic Siege Engine, Greater, resitance = false
+name = Mask Dweomer, Communal, resitance = false
+name = Mind Blank, Communal, resitance = false
+name = Mirror Strike, resitance = false
+name = Moment of Greatness, resitance = false
+name = Mount, Communal, resitance = false
+name = Mutagenic Touch, resitance = false
+name = Named Bullet, Greater, resitance = false
+name = Negative Reaction, resitance = false
+name = Nondetection, Communal, resitance = false
+name = Obsidian Flow, resitance = false
+name = Peacebond, resitance = false
+name = Pellet Blast, resitance = false
+name = Phantom Chariot, resitance = false
+name = Phantom Driver, resitance = false
+name = Phantom Steed, Communal, resitance = false
+name = Pilfering Hand, resitance = false
+name = Protection from Arrows, Communal, resitance = false
+name = Protection from Chaos, Communal, resitance = false
+name = Protection from Energy, Communal, resitance = false
+name = Protection from Evil, Communal, resitance = false
+name = Protection from Good, Communal, resitance = false
+name = Protection from Law, Communal, resitance = false
+name = Pup Shape, resitance = false
+name = Qualm, resitance = false
+name = Recoil Fire, resitance = false
+name = Reinforce Armaments, resitance = false
+name = Reinforce Armaments, Communal, resitance = false
+name = Reloading Hands, resitance = false
+name = Resinous Skin, resitance = false
+name = Resist Energy, Communal, resitance = false
+name = Returning Weapon, resitance = false
+name = Returning Weapon, Communal, resitance = false
+name = See Alignment, resitance = false
+name = Shadow Bomb Admixture, resitance = false
+name = Share Language, Communal, resitance = false
+name = Shock Shield, resitance = false
+name = Shocking Image, resitance = false
+name = Siege Of Trees, resitance = false
+name = Siege of Trees, Greater, resitance = false
+name = Spell Immunity, Communal, resitance = false
+name = Spell Immunity, Greater Communal, resitance = false
+name = Spider Climb, Communal, resitance = false
+name = Spontaneous Immolation, resitance = false
+name = Stabilize Powder, resitance = false
+name = Stoneskin, Communal, resitance = false
+name = Summoner Conduit, resitance = false
+name = Symbol of Striking, resitance = false
+name = Tactical Acumen, resitance = false
+name = Tar Pool, resitance = false
+name = Targeted Bomb Admixture, resitance = false
+name = Telekinetic Assembly, resitance = false
+name = Telekinetic Charge, resitance = false
+name = Terrain Bond, resitance = false
+name = Thunder Fire, resitance = false
+name = Tongues, Communal, resitance = false
+name = Touch Injection, resitance = false
+name = Twisted Space, resitance = false
+name = Unerring Weapon, resitance = false
+name = Viper Bomb Admixture, resitance = false
+name = Walk Through Space, resitance = false
+name = Warding Weapon, resitance = false
+name = Water Walk, Communal, resitance = false
+name = Weaken Powder, resitance = false
+name = Wilderness Soldiers, resitance = false
+name = Wreath of Blades, resitance = false
+name = Aspect of the Nightingale, resitance = false
+name = Shared Sacrifice, resitance = false
+name = Monstrous Extremities, resitance = false
+name = Lose the Trail, resitance = false
+name = Night of Blades, resitance = false
+name = Brittle Portal, resitance = false
+name = Vampiric Hunger, resitance = false
+name = Touch of Bloodletting, resitance = false
+name = Awaken the Devoured, resitance = false
+name = Charon's Dispensation, resitance = false
+name = Create Soul Gem, resitance = false
+name = Daemon Ward, resitance = false
+name = Death Knell Aura, resitance = false
+name = Death Knell Aura, Greater, resitance = false
+name = Lash of the Astradaemon, resitance = false
+name = Parasitic Soul, resitance = false
+name = Scourge of the Horsemen, resitance = false
+name = Soul Transfer, resitance = false
+name = Summon Cacodaemon, resitance = false
+name = Summon Cacodaemon, Greater, resitance = false
+name = Summon Ceustodaemon, resitance = false
+name = Summon Derghodaemon, resitance = false
+name = Summon Erodaemon, resitance = false
+name = Summon Meladaemon, resitance = false
+name = Summon Thanadaemon, resitance = false
+name = Replenish Ki, resitance = false
+name = Call the Void, resitance = false
+name = Black Spot, resitance = false
+name = Buoyancy, resitance = false
+name = Salvage, resitance = false
+name = Skeleton Crew, resitance = false
+name = Track Ship, resitance = false
+name = Unseen Crew, resitance = false
+name = Planetary Adaptation, resitance = false
+name = Planetary Adaptation, Mass, resitance = false
+name = Advanced Scurvy, resitance = false
+name = Cloud Of Seasickness, resitance = false
+name = Submerge Ship, resitance = false
+name = Heroic Fortune, resitance = false
+name = Heroic Fortune, Mass, resitance = false
+name = Malediction, resitance = false
+name = Severed Fate, resitance = false
+name = Unravel Destiny, resitance = false
+name = Embrace Destiny, resitance = false
+name = Groundswell, resitance = false
+name = Ironbeard, resitance = false
+name = Toilsome Chant, resitance = false
+name = Blend, resitance = false
+name = Ward Of The Season, resitance = false
+name = Whispering Lore, resitance = false
+name = Death From Below, resitance = false
+name = Major Phantom Object, resitance = false
+name = Minor Dream, resitance = false
+name = Minor Phantom Object, resitance = false
+name = Recharge Innate Magic, resitance = false
+name = Forgetful Slumber, resitance = false
+name = Paragon Surge, resitance = false
+name = Resilient Reservoir, resitance = false
+name = Urban Grace, resitance = false
+name = Ghost Wolf, resitance = false
+name = Half-blood Extraction, resitance = false
+name = Linebreaker, resitance = false
+name = Savage Maw, resitance = false
+name = Blessing Of Luck And Resolve, resitance = false
+name = Blessing Of Luck And Resolve, Mass, resitance = false
+name = Escaping Ward, resitance = false
+name = Fearsome Duplicate, resitance = false
+name = Village Veil, resitance = false
+name = Bestow Insight, resitance = false
+name = Old Salt's Curse, resitance = false
+name = Sacred Space, resitance = false
+name = Truespeak, resitance = false
+name = Veil Of Heaven, resitance = false
+name = Nine Lives, resitance = false
+name = Steal Breath, resitance = false
+name = Life Channel, resitance = false
+name = Spawn Ward, resitance = false
+name = Ancestral Regression, resitance = false
+name = Web Bolt, resitance = false
+name = Web Cloud, resitance = false
+name = Gloomblind Bolts, resitance = false
+name = Shadowy Haven, resitance = false
+name = Fire Trail, resitance = false
+name = Mudball, resitance = false
+name = Agonizing Rebuke, resitance = false
+name = Chains Of Fire, resitance = false
+name = Death Candle, resitance = false
+name = Fury Of The Sun, resitance = false
+name = Healing Warmth, resitance = false
+name = Touch Of Combustion, resitance = false
+name = Improve Trap, resitance = false
+name = Blood Blaze, resitance = false
+name = Blood Scent, resitance = false
+name = Enemy's Heart, resitance = false
+name = Sentry Skull, resitance = false
+name = Binding Earth, resitance = false
+name = Binding Earth, Mass, resitance = false
+name = Raging Rubble, resitance = false
+name = Stone Shield, resitance = false
+name = Alchemical Tinkering, resitance = false
+name = Delay Disease, resitance = false
+name = Sickening Strikes, resitance = false
+name = Absorbing Inhalation, resitance = false
+name = Cloud Shape, resitance = false
+name = Gusting Sphere, resitance = false
+name = Miasmatic Form, resitance = false
+name = Path Of The Winds, resitance = false
+name = Wind Blades, resitance = false
+name = Windy Escape, resitance = false
+name = Commune With Birds, resitance = false
+name = Winter Feathers, resitance = false
+name = Hellmouth Lash, resitance = false
+name = Marid's Mastery, resitance = false
+name = Nereid's Grace, resitance = false
+name = Nixie's Lure, resitance = false
+name = Undine's Curse, resitance = false
+name = Sow Thought, resitance = false
+name = Aboleth's Lung, resitance = false
+name = Fins To Feet, resitance = false
+name = Karmic Blessing, resitance = false
+name = Strong Wings, resitance = false
+name = Imbue With Elemental Might, resitance = false
+name = Earth Glide, resitance = false
+name = Prehensile Pilfer, resitance = false
+name = Squeeze, resitance = false
+name = False Alibi, resitance = false
+name = Blood Money, resitance = false
+name = Deathwine, resitance = false
+name = Sign Of Wrath, resitance = false
+name = Swipe, resitance = false
+name = Unconscious Agenda, resitance = false
+name = Firebelly, resitance = false
+name = Ironbloom Sprouts, resitance = false
+name = Bed Of Iron, resitance = false
+name = Carry Companion, resitance = false
+name = Clarion Call, resitance = false
+name = Emblazon Crest, resitance = false
+name = Keep Watch, resitance = false
+name = Serren's Armor Lock, resitance = false
+name = Serren's Swift Girding, resitance = false
+name = Ward Shield, resitance = false
+name = Curse Item, resitance = false
+name = Lissalan Snake Sigil, resitance = false
+name = Display Aversion, resitance = false
+name = Domination Link, resitance = false
+name = Project Weakness, resitance = false
+name = Steal Years, resitance = false
+name = Steal Years, Greater, resitance = false
+name = Transmute Wine To Blood, resitance = false
+name = Frost Mammoth, resitance = false
+name = Winter's Grasp, resitance = false
+name = Irriseni Mirror Sight, resitance = false
+name = Bleed For Your Master, resitance = false
+name = Die For Your Master, resitance = false
+name = Familiar Figment, resitance = false
+name = Hunter's Friend, resitance = false
+name = Scamper, resitance = false
+name = Sea Steed, resitance = false
+name = Sea Stallion, resitance = false
+name = Share Shape, resitance = false
+name = Shield Companion, resitance = false
+name = Sky Steed, resitance = false
+name = Flurry Of Snowballs, resitance = false
+name = Snowball, resitance = false
+name = Ice Spears, resitance = false
+name = Martyr's Last Blessing, resitance = false
+name = Peasant Armaments, resitance = false
+name = Conjure Deadfall, resitance = false
+name = Create Holds, resitance = false
+name = Determine Depth, resitance = false
+name = Discern Value, resitance = false
+name = Nature's Ravages, resitance = false
+name = Nature's Ravages, Greater, resitance = false
+name = Corpse Hammer, resitance = false
+name = Oath Of Justice, resitance = false
+name = Tactical Formation, resitance = false
+name = Soothing Word, resitance = false
+name = Frosthammer, resitance = false
+name = Accept Affliction, resitance = false
+name = Angelic Aspect, Lesser, resitance = false
+name = Angelic Aspect, Greater, resitance = false
+name = Angelic Aspect, resitance = false
+name = Archon's Trumpet, resitance = false
+name = Burst Of Radiance, resitance = false
+name = Chains Of Light, resitance = false
+name = Touch Of Mercy, resitance = false
+name = Hymn Of Mercy, resitance = false
+name = Hymn Of Peace, resitance = false
+name = Blood Of The Martyr, resitance = false
+name = Charitable Impulse, resitance = false
+name = Elemental Assessor, resitance = false
+name = Sanctify Weapons, resitance = false
+name = Summon Stampede, resitance = false
+name = Vinetrap, resitance = false
+name = Black Sword Of War, resitance = false
+name = Bloody Tears And Jagged Smile, resitance = false
+name = Blightburn Weapon, resitance = false
+name = Chameleon Scales, resitance = false
+name = Dark-Light, resitance = false
+name = Enlarge Tail, resitance = false
+name = Lead Plating, resitance = false
+name = Shadow Dragon Aspect, resitance = false
+name = Strip Scales, resitance = false
+name = Unseen Engineers, resitance = false
+name = Detect Relations, resitance = false
+name = Business Booms, resitance = false
+name = Prosperous Room, resitance = false
+name = Renovation, resitance = false
+name = Teleport Structure, resitance = false
+name = Bless Army, resitance = false
+name = Imbue Army Special Ability, resitance = false
+name = Tactical Insight, resitance = false
+name = Ceremony, resitance = false
+name = Dragon Turtle Shell, resitance = false
+name = Draconic Suppression, resitance = false
+name = Dragonvoice, resitance = false
+name = Dungeonsight, resitance = false
+name = Erode Defenses, resitance = false
+name = Gravity Well, resitance = false
+name = Heart Of The Mammoth, resitance = false
+name = Illusory Hoard, resitance = false
+name = Kreighton's Perusal, resitance = false
+name = Page-Bound Epiphany, resitance = false
+name = Collaborative Thaumaturgy, resitance = false
+name = Sure Casting, resitance = false
+name = Cauterizing Weapon, resitance = false
+name = Tactical Miscalculation, resitance = false
+name = Wall Of Light, resitance = false
+name = Blood Song, resitance = false
+name = Hallucinogenic Smoke, resitance = false
+name = Jungle Mind, resitance = false
+name = Lay Of The Land, resitance = false
+name = Source Severance, resitance = false
+name = Tectonic Communion, resitance = false
+name = Anti-Summoning Shield, resitance = false
+name = Burst With Light, resitance = false
+name = Detect Demon, resitance = false
+name = Protection From Outsiders, resitance = false
+name = Righteous Blood, resitance = false
+name = Telepathic Censure, resitance = false
+name = Contact Nalfeshnee, resitance = false
+name = Apparent Treachery, resitance = false
+name = Film Of Filth, resitance = false
+name = Lightning Lash, resitance = false
+name = Maw Of Chaos, resitance = false
+name = Summon Greater Demon, resitance = false
+name = Summon Lesser Demon, resitance = false
+name = Unleash Pandemonium, resitance = false
+name = Vermicious Assumption, resitance = false
+name = Accursed Glare, resitance = false
+name = Share Skin, resitance = false
+name = Share Skin, Greater, resitance = false
+name = Heavy Water, resitance = false
+name = Hydrophobia, resitance = false
+name = Blood Boil, resitance = false
+name = Imbue With Addiction, resitance = false
+name = Rune Of Jandelay, resitance = false
+name = Bleeding Strike, resitance = false
+name = Reveal Mirage, resitance = false
+name = Storm Of Blades, resitance = false
+name = Summon Genie, Lesser, resitance = false
+name = Summon Genie, resitance = false
+name = Summon Genie, Greater, resitance = false
+name = Inner Focus, resitance = false
+name = Abyssal Vermin, resitance = false
+name = Explosion Of Rot, resitance = false
+name = Antithetical Constraint, resitance = false
+name = Arbitrament, resitance = false
+name = Ardor's Onslaught, resitance = false
+name = Counterbalancing Aura, resitance = false
+name = Dispel Balance, resitance = false
+name = Recentering Drone, resitance = false
+name = Steal Book, resitance = false
+name = Summon Lesser Psychopomp, resitance = false
+name = Summon Vanth, resitance = false
+name = Possession Trap, resitance = false
+name = Sphere Of Warding, resitance = false
+name = Carrion Compass, resitance = false
+name = Empower Holy Water, resitance = false
+name = Force Anchor, resitance = false
+name = Life Shield, resitance = false
+name = Necromantic Burden, resitance = false
+name = Undeath Inversion, resitance = false
+name = Abadar's Truthtelling, resitance = false
+name = Abstemiousness, resitance = false
+name = Baphomet's Blessing, resitance = false
+name = Beacon Of Luck, resitance = false
+name = Blade Snare, resitance = false
+name = Blessing Of The Watch, resitance = false
+name = Brittle Portal, resitance = false
+name = Burst Of Glory, resitance = false
+name = Caustic Blood, resitance = false
+name = Channel The Gift, resitance = false
+name = Channel Vigor, resitance = false
+name = Dead Eye's Arrow, resitance = false
+name = Defending Bone, resitance = false
+name = Dream Feast, resitance = false
+name = Early Judgment, resitance = false
+name = Enhance Water, resitance = false
+name = Face Of The Devourer, resitance = false
+name = Fairness, resitance = false
+name = Fallback Strategy, resitance = false
+name = False Alibi, resitance = false
+name = Firebelly, resitance = false
+name = Fractions Of Heal And Harm, resitance = false
+name = Freedom's Toast, resitance = false
+name = Ghoul Hunger, resitance = false
+name = Gozreh's Trident, resitance = false
+name = Hairline Fractures, resitance = false
+name = Hammer Of Mending, resitance = false
+name = Haze Of Dreams, resitance = false
+name = Hunter's Blessing, resitance = false
+name = Ice Armor, resitance = false
+name = Inheritor's Smite, resitance = false
+name = Light Prison, resitance = false
+name = Lighten Object, resitance = false
+name = Lighten Object, Mass, resitance = false
+name = Lose The Trail, resitance = false
+name = Maddening Oubliette, resitance = false
+name = Monstrous Extremities, resitance = false
+name = Night Of Blades, resitance = false
+name = Pick Your Poison, resitance = false
+name = Plague Bearer, resitance = false
+name = Poisoned Egg, resitance = false
+name = Read Weather, resitance = false
+name = Replenish Ki, resitance = false
+name = Rovagug's Fury, resitance = false
+name = Sadomasochism, resitance = false
+name = Secret Speech, resitance = false
+name = Seducer's Eyes, resitance = false
+name = Shared Sacrifice, resitance = false
+name = Shield Of The Dawnflower, Greater, resitance = false
+name = Sky Swim, resitance = false
+name = Smite Abomination, resitance = false
+name = Spell Gauge, resitance = false
+name = Spell Scourge, resitance = false
+name = Symbol Of Debauchery, resitance = false
+name = Symbol Of Dispelling, resitance = false
+name = Tap Inner Beauty, resitance = false
+name = Touch Of Bloodletting, resitance = false
+name = Tracking Mark, resitance = false
+name = Transplant Visage, resitance = false
+name = Unwelcome Halo, resitance = false
+name = Vengeful Stinger, resitance = false
+name = Vexing Miscalculation, resitance = false
+name = Weapons Against Evil, resitance = false
+name = Create Variant Mummy, resitance = false
+name = Virulence, resitance = false
+name = Calculated Luck, resitance = false
+name = Cleromancy, resitance = false
+name = Luck Y Number, resitance = false
+name = Mathematical Curse, resitance = false
+name = Numerological Evocation, resitance = false
+name = Numerological Resistance, resitance = false
+name = Call Spirit, resitance = false
+name = Calm Spirit, resitance = false
+name = Spectral Saluqi, resitance = false
+name = Harrowing, Greater, resitance = false
+name = Abeyance, resitance = false
+name = Aggravate Affliction, resitance = false
+name = Bestow Curse, Greater, resitance = false
+name = Enshroud Thoughts, resitance = false
+name = Storm Step, resitance = false
+name = Boneshatter, resitance = false
+name = Alter River, resitance = false
+name = Detect Metal, resitance = false
+name = Hanspur's Flotsam Vessel, resitance = false
+name = Magnetic Field, resitance = false
+name = Resounding Clang, resitance = false
+name = Riversight, resitance = false
+name = Sabotage Construct, resitance = false
+name = Antitech Field, resitance = false
+name = Destroy Robot, resitance = false
+name = Detect Radiation, resitance = false
+name = Discharge, resitance = false
+name = Discharge, Greater, resitance = false
+name = Infuse Robot, resitance = false
+name = Irradiate, resitance = false
+name = Magic Circle Against Technology, resitance = false
+name = Make Whole, Greater, resitance = false
+name = Memory Of Function, resitance = false
+name = Protection From Technology, resitance = false
+name = Rebuke Technology, resitance = false
+name = Recharge, resitance = false
+name = Remove Radioactivity, resitance = false
+name = Remove Radioactivity, Greater, resitance = false
+name = Technomancy, resitance = false
+name = Cosmic Ray, resitance = false
+name = Gravity Sphere, resitance = false
+name = Planetarium, resitance = false
+name = Planetary Adaptation, resitance = false
+name = Planetary Adaptation, Mass, resitance = false
+name = Reboot, resitance = false
+name = Starsight, resitance = false
+name = Adhesive Blood, resitance = false
+name = Adhesive Spittle, resitance = false
+name = Adjustable Disguise, resitance = false
+name = Adjustable Polymorph, resitance = false
+name = Aggressive Thundercloud, resitance = false
+name = Aggressive Thundercloud, Greater, resitance = false
+name = Air Geyser, resitance = false
+name = Air Step, resitance = false
+name = Align Weapon, Communal, resitance = false
+name = Alter Musical Instrument, resitance = false
+name = Anchored Step, resitance = false
+name = Animal Purpose Training, resitance = false
+name = Anonymous Interaction, resitance = false
+name = Anti-Incorporeal Shell, resitance = false
+name = Aura Sight, resitance = false
+name = Banshee Blast, resitance = false
+name = Barrow Haze, resitance = false
+name = Beastspeak, resitance = false
+name = Bestow Auras, resitance = false
+name = Blade Lash, resitance = false
+name = Blazing Rainbow, resitance = false
+name = Blessed Fist, resitance = false
+name = Bloatbomb, resitance = false
+name = Blood Armor, resitance = false
+name = Blood Sentinel, resitance = false
+name = Blurred Movement, resitance = false
+name = Body Capacitance, resitance = false
+name = Bullet Ward, resitance = false
+name = Buoyancy, resitance = false
+name = Chameleon Stride, Greater, resitance = false
+name = Climbing Beanstalk, resitance = false
+name = Companion Life Link, resitance = false
+name = Contingent Action, resitance = false
+name = Contingent Scroll, resitance = false
+name = Creeping Ice, resitance = false
+name = Crimson Confession, resitance = false
+name = Curse Of Burning Sleep, resitance = false
+name = Dimensional Bounce, resitance = false
+name = Disable Construct, resitance = false
+name = Discern Next Of Kin, resitance = false
+name = Disguise Weapon, resitance = false
+name = Enchantment Foil, resitance = false
+name = Enemy Insight, resitance = false
+name = Euphoric Cloud, resitance = false
+name = Extreme Flexibility, resitance = false
+name = Eyes Of The Void, resitance = false
+name = Fairy Ring Retreat, resitance = false
+name = Familiar Double, resitance = false
+name = Feast On Fear, resitance = false
+name = Flaming Sphere, Greater, resitance = false
+name = Flexible Fury, resitance = false
+name = Focused Scrutiny, resitance = false
+name = Font Of Spirit Magic, resitance = false
+name = Gentle Breeze, resitance = false
+name = Glue Seal, resitance = false
+name = Guardian Of Faith, resitance = false
+name = Heart Of The Metal, resitance = false
+name = Heightened Awareness, resitance = false
+name = Heightened Reflexes, resitance = false
+name = Hex Glyph, resitance = false
+name = Hex Glyph, Greater, resitance = false
+name = Hex Vulnerability, resitance = false
+name = Holy Ice Weapon, resitance = false
+name = Investigative Mind, resitance = false
+name = Invisibility Alarm, resitance = false
+name = Life Pact, resitance = false
+name = Line In The Sand, resitance = false
+name = Long Arm, resitance = false
+name = Longstrider, Greater, resitance = false
+name = Magnifying Chime, resitance = false
+name = Mantle Of Calm, resitance = false
+name = Marching Chant, resitance = false
+name = Mark Of Obvious Ethics, resitance = false
+name = Memorize Page, resitance = false
+name = Mindlocked Messenger, resitance = false
+name = Mirror Hideaway, resitance = false
+name = Mirror Polish, resitance = false
+name = Mirror Transport, resitance = false
+name = Molten Orb, resitance = false
+name = Monkey Fish, resitance = false
+name = Muffle Sound, resitance = false
+name = Nauseating Dart, resitance = false
+name = Nauseating Trail, resitance = false
+name = Path Of Glory, resitance = false
+name = Path Of Glory, Greater, resitance = false
+name = Persistent Vigor, resitance = false
+name = Phantom Blood, resitance = false
+name = Pierce Disguise, resitance = false
+name = Planeslayer's Call, resitance = false
+name = Polymorph Familiar, resitance = false
+name = Refine Improvised Weapon, resitance = false
+name = Repair Undead, resitance = false
+name = Repair Undead, Mass, resitance = false
+name = River Whip, resitance = false
+name = Sense Spirit Magic, resitance = false
+name = Shield Companion, resitance = false
+name = Shield Of Fortification, resitance = false
+name = Shield Of Fortification, Greater, resitance = false
+name = Sickening Entanglement, resitance = false
+name = Silent Table, resitance = false
+name = Silver Darts, resitance = false
+name = Slowing Mud, resitance = false
+name = Sonic Form, resitance = false
+name = Sonic Scream, resitance = false
+name = Speak With Haunt, resitance = false
+name = Spellcrash, Lesser, resitance = false
+name = Spellcrash, Greater, resitance = false
+name = Spellcrash, resitance = false
+name = Stench Of Prey, resitance = false
+name = Stone Discus, resitance = false
+name = Stricken Heart, resitance = false
+name = Stunning Barrier, resitance = false
+name = Stunning Barrier, Greater, resitance = false
+name = Sunder Breaker, resitance = false
+name = Sundering Shards, resitance = false
+name = Symbol Of Laughter, resitance = false
+name = Thorn Javelin, resitance = false
+name = Thorny Entanglement, resitance = false
+name = Thunderstomp, resitance = false
+name = Thunderstomp, Greater, resitance = false
+name = Time Shudder, resitance = false
+name = Triggered Suggestion, resitance = false
+name = Twilight Haze, resitance = false
+name = Unbearable Brightness, resitance = false
+name = Unholy Ice Weapon, resitance = false
+name = Unliving Rage, resitance = false
+name = Vampiric Shadow Shield, resitance = false
+name = Wall Of Blindness/Deafness, resitance = false
+name = Wall Of Nausea, resitance = false
+name = Wave Shield, resitance = false
+name = Whip Of Spiders, resitance = false
+name = Whip Of Ants, resitance = false
+name = Whip Of Centipedes, resitance = false
+name = Widen Auras, resitance = false
+name = Semblance Of Flesh, resitance = false
+name = Shared Suffering, resitance = false
+name = Wracking Ray, resitance = false

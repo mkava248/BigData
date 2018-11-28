@@ -4,15 +4,24 @@ import scala.collection.mutable.ArrayBuffer
 
 object test extends App {
 
- val string = "http://legacy.aonprd.com/bestiary/"
- val code = GetSource.getCode(string + "monsterIndex.html")
+ val bestiary = "http://legacy.aonprd.com/bestiary/"
+ val code = GetSource.getCode(bestiary + "monsterIndex.html")
  val r = Parser.parseBestiaryLinks(code)
 
- val creatures = ArrayBuffer[Creature]()
+ val spellsBook = "http://www.dxcontent.com/SDB_SpellBlock.asp?SDBID="
 
+ val creatures = ArrayBuffer[Creature]()
+ val spells = ArrayBuffer[Spell]()
+
+ val conf = new SparkConf().setAppName("petit test rapide").setMaster("local[*]")
+ val sc = new SparkContext(conf)
+ sc.setLogLevel("ERROR")
+
+ //Recuperation des creatures
+ println("Récupération des créatures")
  var i = 0
  for (i <- 0 until r.size()) {
-  val codeBeast = GetSource.getCode(string + r.get(i))
+  val codeBeast = GetSource.getCode(bestiary + r.get(i))
   val beast = Parser.parseBestiary(codeBeast, r.get(i))
   if(beast != null){
    //println(beast.toString)
@@ -27,46 +36,37 @@ object test extends App {
 
  }
 
+ //Recuperation des sorts
+ i = 1
+ println("Récupération des sorts")
+  for(i <- 1 until 1976){
+    val codeSpell = GetSource.getCode(spellsBook + i)
+    val spellJ = Parser.parseSpell(codeSpell)
+    if(spellJ != null) {
+      val spell = new Spell(spellJ.getName().toLowerCase(), spellJ.getSpellResitance)
+      spells += spell
+    }
+  }
 
- val conf = new SparkConf().setAppName("petit test rapide").setMaster("local[*]")
- val sc = new SparkContext(conf)
- sc.setLogLevel("ERROR")
+ println("Début RDD")
 
-
- /*
-  println("Hello world !")
-  var c1 = new Creature("Solar")
-  c1.addSpell("etherealness")
-  c1.addSpell("wind wall")
-  c1.addSpell("miracle")
-  c1.addSpell("storm  of vengeance")
-  c1.addSpell("fire storm")
-  c1.addSpell("holy aura")
-  c1.addSpell("mass cure critical")
-
-  var c2 = new Creature("Bralani")
-  c2.addSpell("blur")
-  c2.addSpell("charm person")
-  c2.addSpell("mass cure critical")
-  c2.addSpell("mirror image")
-  c2.addSpell("wind wall")
+ val rddCrea = sc.parallelize(creatures)
+ val rddSpell = sc.parallelize(spells)
+ val t = rddSpell.map(s => (s._name, s._resistance))
 
 
-  val creatures = ArrayBuffer[Creature]()
-  creatures +=c1
-  creatures +=c2*/
- val rdd = sc.parallelize(creatures)
- //rdd = sc.parallelize(Array(c1, c2))
- /*def g(creature:Creature) = {
-   val a = Array()
-   for(int i = 0; i<creature._spells.length;i++){
-     a.addString(creature._spells, creature._name)
-   }
- }*/
-
- val temp = rdd.flatMap(creature => creature._spells.map(s => (s, creature._name)))
-               .reduceByKey((res, n) => res +" + "+ n)
+ val temp = rddCrea.flatMap(creature => creature._spells.map(s => (s, creature._name)))
+               .reduceByKey((res, n) => res +" + "+ n).join(t).map(o => (o._1, o._2._2, o._2._1))
  temp.foreach(println(_))
+
+ //var test = temp.map(o => (o._1, o._2.toString().equals("true"), o._3))
+ //test.foreach(println(_))
+/*temp.flatMap(x => {
+ if(!x._2) (x._1, x._2, x._3)
+} )*/
+ var test = temp.filter(x => (!x._2))
+ test.foreach(println(_))
+
 
   //-----------------------------------------
   //Fin exercice 1
