@@ -46,7 +46,7 @@ class Personnage(val _name:String, var _healPoint: Int, val _armor:Int, val _wea
   }*/
 
   override def toString: String = {
-    _name + " : PV = " + _healPoint + ", Armure = " + _armor + ", \nWeapons = " + _weaponArray.mkString(", ")
+    _name + " : PV = " + _healPoint + ", Armure = " + _armor + ", X = " + _x + ", Y = " + _y + ", \nWeapons = " + _weaponArray.mkString(", ")
   }
 
 }

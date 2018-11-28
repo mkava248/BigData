@@ -1,6 +1,6 @@
 package Exercice2
 import scala.collection.mutable.ArrayBuffer
-import org.apache.spark.graphx.{Edge, EdgeContext, Graph, VertexId}
+import org.apache.spark.graphx.{Edge, EdgeContext, Graph, VertexId, TripletFields}
 import org.apache.spark.{SparkConf, SparkContext}
 
 import scala.collection.mutable
@@ -29,25 +29,25 @@ object Principal {
       val slam = new Weapon("slam", Array(30), 10, 1)
       val longBow = new Weapon("longBow", Array(31, 26, 21, 16), 10, 5)
       val weaponMap = Array(greatsWord, slam, longBow)
-      val solar = new Solar("Solar", 363, 44,15, weaponMap, 0, 0)
+      val solar = new Solar("Solar", 363, 44,15, weaponMap, 0, 0, 0)
 
       //Generation des worgs rider
       val arrayOrc = ArrayBuffer[Orc]()
       val battleAxe = new  Weapon("battleAxe", Array(2), 2, 2)
-      (1 to 9) foreach(x => {arrayOrc += new WorgRider("WordRider_"+x, 13, 18, Array(battleAxe), 1, 1)})
+      (1 to 9) foreach(x => {arrayOrc += new WorgRider("WordRider_"+x, 13, 18, Array(battleAxe), 5, 5, 10)})
 
       //Generation des barbares orcs
       val arrayBarbarian = ArrayBuffer[Orc]()
       val doubleAxe = new  Weapon("battleAxe", Array(2), 2, 2)
       val other = new  Weapon("battleAxe", Array(2), 2, 2)
-      (1 to 4) foreach(x => {arrayOrc += new WorgRider("Barbarian_"+x, 142, 17, Array(doubleAxe, other), 2, 2)})
+      (1 to 4) foreach(x => {arrayOrc += new WorgRider("Barbarian_"+x, 142, 17, Array(doubleAxe, other), 10, 10, 10)})
 
       //Generation du warlord
       val viciousFlail = new Weapon("viciousFlail", Array(1), 2, 2)
       val lionsShield = new Weapon("lionsShield", Array(1), 2, 2)
-      val warlord = new Warlord("Warlord", 141, 27, Array(viciousFlail, lionsShield), 3, 3)
+      val warlord = new Warlord("Warlord", 141, 27, Array(viciousFlail, lionsShield), 20, 20, 10)
 
-      //Debug
+      //Affichage
       /*println(solar.toString()+"\n")
       println(arrayOrc.mkString("\n\n"))
       println(arrayBarbarian.mkString("\n\n"))
@@ -60,19 +60,82 @@ object Principal {
       tab
   }
 
+
+  //TODO utiliser un map ou un flatmpap à la place du foreach
   def generateEdge(vertices: ArrayBuffer[(Long, Personnage)]): ArrayBuffer[Edge[Int]] ={
     val a = new ArrayBuffer[Edge[Int]]()
-    1 to vertices.length-1 foreach  (i => a.append(Edge(vertices(0)._1.toLong, vertices(i)._1.toLong, vertices(0)._2.calculateDistance(vertices(1)._2))))
+    1 to vertices.length-1 foreach (i => a.append(Edge(vertices(0)._1.toLong, vertices(i)._1.toLong, vertices(0)._2.calculateDistance(vertices(i)._2))))
     a
   }
 
-  def sendPosition(): Unit={
-
+  def sendPosition(context: EdgeContext[Personnage, Int, Long]): Unit={
+    context.sendToSrc(context.attr)
+    context.sendToDst(context.attr)
+//    println("Source : " + context.srcAttr.toString)
+//    println("Destination : " + context.dstAttr.toString)
+//    println("Distance : " +context.attr.toString)
+//    print("\n\n")
   }
 
-  def execute(value: Graph[Personnage, String], i: Int, context: SparkContext): Unit ={
-
+  def sendAttack(context: EdgeContext[Personnage, Int, Long]): Unit ={
+    context.sendToDst(context.attr)
   }
+
+
+  def selectTheClosest(n:Long, m:Long): Long ={
+    //retourne le minimum dans cet exemple
+    if (n < m) n
+    else m
+  }
+
+
+  def execute(myGraph: Graph[Personnage, Int], maxIterations: Int, context: SparkContext): Unit ={
+    var counter = 0
+    val fields = new TripletFields(true, true, false) //join strategy
+
+    def loop1: Unit = {
+      while (true) {
+
+        println("ITERATION NUMERO : " + (counter + 1))
+        counter += 1
+        if (counter >= maxIterations) return
+
+        var messages = myGraph.aggregateMessages[Long](
+          sendPosition,
+          selectTheClosest
+          //fields //use an optimized join strategy (we don't need the edge attribute)
+        )
+
+        if (messages.isEmpty()) return
+/*
+        myGraph2 =
+        messages = myGraph.aggregateMessages[Long](
+          sendAttack,
+          selectTheClosest
+          //fields //use an optimized join strategy (we don't need the edge attribute)
+        )
+
+        if (messages.isEmpty()) return
+
+        myGraph = myGraph.((a, b, c) => (a.))
+*/
+
+
+
+        //Ignorez : Code de debug
+        /*var printedGraph = myGraph.vertices.collect()
+        printedGraph = printedGraph.sortBy(_._1)
+        printedGraph.foreach(
+          elem => println(elem._2)
+        )*/
+      }
+
+    }
+
+    loop1 //execute loop
+    myGraph //return the result graph
+  }
+
 
   def main(args:Array[String]): Unit = {
 
@@ -85,55 +148,11 @@ object Principal {
     var myVertices = generateFirstFight().zipWithIndex.map{case (creature, index) => (index.toLong, creature)}
     myVertices.foreach(x=>println("\nID = " + x._1 + ", " + x._2.toString))
 
-    //Definition des arrretes
+    //Definition des arretes
     var myEdges = generateEdge(myVertices)
-    myEdges.foreach(x=>println(x.toString ))
+    myEdges.foreach(x=>println(x.toString))
     var myGraph = Graph(sc.makeRDD(myVertices), sc.makeRDD(myEdges))
-    //val res = execute(myGraph, 20, sc)
+    val res = execute(myGraph, 20, sc)
 
-
-
-
-
-    /*var solar = null
-    var warlord = null
-    var arrayBarbarian = null
-    var arrayOrc = null
-    generateFirstFight(solar, arrayBarbarian, arrayOrc, warlord)
-    var myVertices = sc.makeRDD(Array(
-      (1L, solar),
-      (2L, warlord),
-      (3L, arrayBarbarian(0)),
-      (4L, arrayBarbarian(1)),
-      (5L, arrayBarbarian(2)),
-      (6L, arrayBarbarian(3)),
-      (7L, arrayOrc(0)),
-      (8L, arrayOrc(1)),
-      (9L, arrayOrc(2)),
-      (10L, arrayOrc(3)),
-      (11L, arrayOrc(4)),
-      (12L, arrayOrc(5)),
-      (13L, arrayOrc(6)),
-      (14L, arrayOrc(7)),
-      (15L, arrayOrc(8)),
-      (16L, arrayOrc(9))
-    ))
-
-    var myEdges = sc.makeRDD(Array(
-      Edge(1L, 2L, "1"),
-      Edge(1L, 3L, "2"),
-      Edge(1L, 4L, "3"),
-      Edge(1L, 5L, "4"),
-      Edge(1L, 6L, "5"),
-      Edge(1L, 7L, "6"),
-      Edge(1L, 8L, "7"),
-      Edge(1L, 9L, "8"),
-      Edge(1L, 10L, "9"),
-      Edge(1L, 11L, "10"),
-      Edge(1L, 12L, "11"),
-      Edge(1L, 13L, "12"),
-      Edge(1L, 14L, "13"),
-      Edge(1L, 15L, "14")
-    ))*/
   }
 }
