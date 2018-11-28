@@ -57,7 +57,7 @@ object test extends App {
 
  val temp = rddCrea.flatMap(creature => creature._spells.map(s => (s, creature._name)))
                .reduceByKey((res, n) => res +" + "+ n).join(t).map(o => (o._1, o._2._2, o._2._1))
- temp.foreach(println(_))
+ ///temp.foreach(println(_))
 
  //var test = temp.map(o => (o._1, o._2.toString().equals("true"), o._3))
  //test.foreach(println(_))
@@ -65,7 +65,7 @@ object test extends App {
  if(!x._2) (x._1, x._2, x._3)
 } )*/
  var test = temp.filter(x => (!x._2))
- test.foreach(println(_))
+ test.foreach(println(_)) //n'affiche pas les sorts de soin car ils ont spell resistance a true
 
 
   //-----------------------------------------
