@@ -118,66 +118,89 @@ object Principal {
           selectTheClosest
           //fields //use an optimized join strategy (we don't need the edge attribute)
         )
-        messages foreach (x => println("(ID vertex : " + x._1 + ", " + "(Vertex Source : " + x._2._1._name + ", Dest : " + x._2._2._name + ", PV : " + x._2._1._healPoint + ", distance = " + x._2._3.toInt + "))"))
+        messages foreach (x => println("(ID vertex : " + x._1 + ", " + "(Vertex Source : " + x._2._1._name + ", PV : " + x._2._1._healPoint + ", Dest : " + x._2._2._name + ", distance = " + x._2._3.toInt + "))"))
         //                messages foreach println
         //        messages foreach (x => println(x._1.getClass + " " + x._1.toString + ", " + x._2._1.getClass + ", " + x._2._2.getClass + ", " + x._2._3.getClass))
         if (messages.isEmpty()) return
         println("*******1")
+        //Le message envoyé est x._2
+        //VertextID du chaque sommet du graph, ID de chaque message (x._1)
+        val newGraph = myGraph.joinVertices(messages) {
+          (vertexID, pSrc, msgrecu) => {
+            println("ID = " + vertexID.toString)
+            println("source :" + pSrc._name)
+            println("source : " + msgrecu._1._name + ", dest = " + msgrecu._2._name + ", distance = " + msgrecu._3 + "\n")
 
-        val newGraph = myGraph.joinVertices(messages) { (vertexID, pSrc, dist) => {
-//          println("ID = " + vertexID.toString)
-//          println("source :" + pSrc.toString)
-//          println("distance : " + dist._1._name + dist._2._name + dist._3 + "\n")
-          val attaquant = dist._1
-          val defenseur = dist._2
-          var attribut = dist._3 //distance
-//          println("A : " + attaquant._name + ", D : " + defenseur._name + ", att : " + attribut)
-          val weapon = attaquant.selectWeapon(attribut)
+            //write code _1 attaque _2
+//            msgrecu._1.addHP(-1);
+            msgrecu._1.addHP(-1);
 
-          //Cela veut dire que l'attaquant est trop loin
-          if (weapon == null) {
-            attaquant.move(defenseur)
-            attribut = 0 //damage
-          } else {
-            //l'attaquant est assez près
-            attribut = attaquant.attack(defenseur, weapon) //damage
+            val weapon = msgrecu._1.selectWeapon(msgrecu._3)
+            if (weapon == null) {
+              //Le monstre n'a pas assez de portée, il avance
+              msgrecu._1._ennemy = msgrecu._2
+              msgrecu._1.distanceEnnemy = msgrecu._3
+              //msgrecu._1.move(msgrecu._2)
+            } else {
+              //msgrecu._1.attack(msgrecu._2, weapon)
+            }
+            msgrecu._1
+
+
+
+
+
+            //          val attaquant = dist._1
+            //          val defenseur = dist._2
+            //          var attribut = dist._3 //distance
+            //          //          println("A : " + attaquant._name + ", D : " + defenseur._name + ", att : " + attribut)
+            //          val weapon = attaquant.selectWeapon(attribut)
+            //
+            //          //Cela veut dire que l'attaquant est trop loin
+            //          if (weapon == null) {
+            //            attaquant.move(defenseur)
+            //            attribut = 0 //damage
+            //          } else {
+            //            //l'attaquant est assez près
+            //            attribut = attaquant.attack(defenseur, weapon) //damage
+            //          }
+            //          attaquant.addHP(-attribut.toInt) //retirer des PV
+            //          attaquant
           }
-                    attaquant.addHP(-attribut.toInt)//retirer des PV
-          attaquant
         }
-        }
-println("***********************")
+        println("***********************")
         val b = newGraph.vertices.collect()
-        b foreach (a => println(a._1, a._2._name, a._2._healPoint))
-        /*
-             println("********")
-             messages foreach (m => {
-               val attaquant = m._2._1
-               val defenseur = m._2._2
-               var attribut = m._2._3 //distance
-               println("A : " + attaquant._name + ", D : " + defenseur._name + ", att : " + attribut)
-               val weapon = attaquant.selectWeapon(defenseur, attribut)
+        b foreach (x => println(x._1 + ", " + x._2._name + ", " + x._2._healPoint))
+        /*      b foreach (a => println(a._1, a._2._name, a._2._healPoint))
 
-               if (weapon == null) {
-                 attaquant.move(defenseur)
-                 attribut = 0
-               } else {
-                 attribut = attaquant.attack(defenseur, weapon) //damage
-               }
-               println("***A : " + attaquant._name + ", D : " + defenseur._name + ", att : " + attribut + "\n")
+                   println("********")
+                   messages foreach (m => {
+                     val attaquant = m._2._1
+                     val defenseur = m._2._2
+                     var attribut = m._2._3 //distance
+                     println("A : " + attaquant._name + ", D : " + defenseur._name + ", att : " + attribut)
+                     val weapon = attaquant.selectWeapon(defenseur, attribut)
 
-             })
-             messages foreach (x => println("(ID vertex : " + x._1 + ", " + "(Vertex Source : " + x._2._1._name + ", Dest " + x._2._2._name + ", distance = " + x._2._3.toInt + "))"))
+                     if (weapon == null) {
+                       attaquant.move(defenseur)
+                       attribut = 0
+                     } else {
+                       attribut = attaquant.attack(defenseur, weapon) //damage
+                     }
+                     println("***A : " + attaquant._name + ", D : " + defenseur._name + ", att : " + attribut + "\n")
+
+                   })
+                   messages foreach (x => println("(ID vertex : " + x._1 + ", " + "(Vertex Source : " + x._2._1._name + ", Dest " + x._2._2._name + ", distance = " + x._2._3.toInt + "))"))
 
 
-             val messages2 = myGraph.aggregateMessages[(Personnage, Int)](
-               sendDamage,
-               { (x, y) => (x._1, x._2 + y._2) }
-               //fields //use an optimized join strategy (we don't need the edge attribute)
-             )
-             //        messages2 foreach (x => println("(ID vertex : " + x._1 + ", " + "(attaquant : " + x._2._1._name + ", degats : " + x._2._2 + "))"))
+                   val messages2 = myGraph.aggregateMessages[(Personnage, Int)](
+                     sendDamage,
+                     { (x, y) => (x._1, x._2 + y._2) }
+                     //fields //use an optimized join strategy (we don't need the edge attribute)
+                   )
+                   //        messages2 foreach (x => println("(ID vertex : " + x._1 + ", " + "(attaquant : " + x._2._1._name + ", degats : " + x._2._2 + "))"))
 
-     */
+           */
         /*messages2 foreach (m => {
           val attaquant = m._2._1
           val defenseur = m._2._2
@@ -192,49 +215,10 @@ println("***********************")
         })*/
 
 
-        //        println(messages.getClass)
-        //messages foreach(m=>myGraph.filter(y=>{if(y.vertices.id==m._1) y.}))
-        //     messages.map(_._2._1.decideAction())
-        /*   var azerty = myGraph.vertices.foreach(x => {
-          //println("\nID = " + x._1 + ", " + x._2.toString)
-          val a=context.parallelize(messages).map(m => if (x._2 == m._2._2) {
-            (m._2._1._name, m._2._3)
-          }).red
-          a.redu
-        })*/
-
         //        println(myGraph.edges)
 
         //        messages.map(x => if(x._1.(x._2._2.toInt, x._1)).reduceByKey(_+_) foreach println
         //        messages foreach (x => println("(ID vertex : " + x._1 + ", " + "(Vertex destination : " + x._2._1._name + ", son ID " + x._2._2 + ", distance = " + x._2._3.toInt + "))"))
-
-        /*
-                    val messages2 = myGraph.aggregateMessages[(Personnage, Int, Long)](
-                      x => {
-                        messages.filter(y => {
-                          y._2._1._name != x.attr
-                        }
-                        )
-                        messages.map()
-
-                      }
-                      //          sendAttack((messages.),
-                      //          selectTheClosest
-                      //fields //use an optimized join strategy (we don't need the edge attribute)
-                    )*/
-
-        /*
-                myGraph2 =
-                messages = myGraph.aggregateMessages[Long](
-                  sendAttack,
-                  selectTheClosest
-                  //fields //use an optimized join strategy (we don't need the edge attribute)
-                )
-
-                if (messages.isEmpty()) return
-
-                myGraph = myGraph.((a, b, c) => (a.))
-        */
 
 
         //Ignorez : Code de debug

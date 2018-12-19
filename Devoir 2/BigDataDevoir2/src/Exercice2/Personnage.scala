@@ -3,7 +3,7 @@ package Exercice2
 import scala.math.pow
 
 class Personnage(val _name: String, var _healPoint: Int, val _armor: Int, val _weaponArray: Array[Weapon],
-                 var _x: Float, var _y: Float, var _speed: Int, var _ennmy: Long = (-1.0).toLong)
+                 var _x: Float, var _y: Float, var _speed: Int, var _ennemy: Personnage = null /*var _ennmy: Long = (-1.0).toLong*/)
   extends Serializable {
 
   def isDead(): Boolean = {
