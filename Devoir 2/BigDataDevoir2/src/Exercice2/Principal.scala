@@ -23,30 +23,30 @@ object Principal {
 
     var tab = new ArrayBuffer[Personnage]()
     //Generation de Solar
-    val greatsWord = new Weapon("greatsWord", Array(35, 30, 25, 20), "3d6+18",10, 5)
-    val slam = new Weapon("slam", Array(30), "2d8+13",10, 1)
-    val longBow = new Weapon("longBow", Array(31, 26, 21, 16), "2d6+14",110, 5)
+    val greatsWord = new Weapon("greatsWord", Array(35, 30, 25, 20), "3d6+18", 10, 5)
+    val slam = new Weapon("slam", Array(30), "2d8+13", 10, 1)
+    val longBow = new Weapon("longBow", Array(31, 26, 21, 16), "2d6+14", 110, 5)
     val weaponMap = Array(greatsWord, slam, longBow)
     val solar = new Solar("Solar", 363, 44, 15, weaponMap, 0, 0, 0)
 
     //Generation des worgs rider
     val arrayOrc = ArrayBuffer[Orc]()
-    val battleAxe = new Weapon("battleAxe", Array(2), "1d8+2",2, 2)
+    val battleAxe = new Weapon("battleAxe", Array(2), "1d8+2", 2, 2)
     (1 to 9) foreach (x => {
       arrayOrc += new WorgRider("WordRider_" + x, 13, 18, Array(battleAxe), 5, 5, 10)
     })
 
     //Generation des barbares orcs
     val arrayBarbarian = ArrayBuffer[Orc]()
-    val doubleAxe = new Weapon("battleAxe", Array(19, 14, 9), "1d8+10",2, 2)
+    val doubleAxe = new Weapon("battleAxe", Array(19, 14, 9), "1d8+10", 2, 2)
     val other = new Weapon("battleAxe", Array(2), "1d8+2", 2, 2)
     (1 to 4) foreach (x => {
       arrayOrc += new WorgRider("Barbarian_" + x, 142, 17, Array(doubleAxe, other), 10, 10, 10)
     })
 
     //Generation du warlord
-    val viciousFlail = new Weapon("viciousFlail", Array(20, 15, 10),"1d8+10", 2, 2)
-    val lionsShield = new Weapon("lionsShield", Array(23), "1d4+6",2, 2)
+    val viciousFlail = new Weapon("viciousFlail", Array(20, 15, 10), "1d8+10", 2, 2)
+    val lionsShield = new Weapon("lionsShield", Array(23), "1d4+6", 2, 2)
     val warlord = new Warlord("Warlord", 141, 27, Array(viciousFlail, lionsShield), 20, 20, 10)
 
     //Affichage
@@ -98,7 +98,8 @@ object Principal {
 
   //(ID du personnage source, (le personnage destination, son ID, les degats))
   def sendDamage(context: EdgeContext[Personnage, Int, (Personnage, Int)]): Unit = {
-    context.sendToDst((context.dstAttr, context.attr))
+    if (context.srcAttr._cible._name.equals(context.dstAttr._name))
+      context.sendToDst((context.dstAttr, context.srcAttr._damage))
   }
 
 
@@ -110,8 +111,8 @@ object Principal {
       while (true) {
 
         counter += 1
-        println("ITERATION NUMERO : " + counter)
         if (counter >= maxIterations) return
+        println("ITERATION NUMERO : " + counter)
 
         val messages = myGraph.aggregateMessages[(Personnage, Personnage, Long)](
           sendPosition,
@@ -125,102 +126,59 @@ object Principal {
         println("*******1")
         //Le message envoyé est x._2
         //VertextID du chaque sommet du graph, ID de chaque message (x._1)
-        val newGraph = myGraph.joinVertices(messages) {
+        var newGraph = myGraph.joinVertices(messages) {
           (vertexID, pSrc, msgrecu) => {
             println("ID = " + vertexID.toString)
             println("source :" + pSrc._name)
-            println("source : " + msgrecu._1._name + ", dest = " + msgrecu._2._name + ", distance = " + msgrecu._3 )
+            println("source : " + msgrecu._1._name + ", dest = " + msgrecu._2._name + ", distance = " + msgrecu._3)
 
-            //write code _1 attaque _2
-//            msgrecu._1.addHP(-1);
-//            msgrecu._1.addHP(-1);
             msgrecu._1._cible = msgrecu._2
             msgrecu._1._distanceCible = msgrecu._3
 
-
-            //msgrecu._1._damage = // TODO
-
-
-
             val weapon = msgrecu._1.selectWeapon()
             if (weapon == null) {
-              //Le monstre n'a pas assez de portée, il avanc
+              //Le monstre n'a pas assez de portée, il avance
               msgrecu._1.move(msgrecu._2)
               println("A bougé" + "\n")
             } else {
               msgrecu._1.attack(msgrecu._2, weapon)
-              println("Dégat fait :" + msgrecu._1._damage + "\n")
+              println("Dégat fait : " + msgrecu._1._damage + "\n")
             }
 
-
-             msgrecu._1
-
-
-
-
-            //          val attaquant = dist._1
-            //          val defenseur = dist._2
-            //          var attribut = dist._3 //distance
-            //          //          println("A : " + attaquant._name + ", D : " + defenseur._name + ", att : " + attribut)
-            //          val weapon = attaquant.selectWeapon(attribut)
-            //
-            //          //Cela veut dire que l'attaquant est trop loin
-            //          if (weapon == null) {
-            //            attaquant.move(defenseur)
-            //            attribut = 0 //damage
-            //          } else {
-            //            //l'attaquant est assez près
-            //            attribut = attaquant.attack(defenseur, weapon) //damage
-            //          }
-            //          attaquant.addHP(-attribut.toInt) //retirer des PV
-            //          attaquant
+            msgrecu._1
           }
         }
         println("***********************")
+
         val b = newGraph.vertices.collect()
         b foreach (x => println(x._1 + ", " + x._2._name + ", " + x._2._healPoint))
-        /*      b foreach (a => println(a._1, a._2._name, a._2._healPoint))
 
-                   println("********")
-                   messages foreach (m => {
-                     val attaquant = m._2._1
-                     val defenseur = m._2._2
-                     var attribut = m._2._3 //distance
-                     println("A : " + attaquant._name + ", D : " + defenseur._name + ", att : " + attribut)
-                     val weapon = attaquant.selectWeapon(defenseur, attribut)
+        //Enregistrer dans les edges, les damages
+        //        createEdgeDamage(myGraph)
 
-                     if (weapon == null) {
-                       attaquant.move(defenseur)
-                       attribut = 0
-                     } else {
-                       attribut = attaquant.attack(defenseur, weapon) //damage
-                     }
-                     println("***A : " + attaquant._name + ", D : " + defenseur._name + ", att : " + attribut + "\n")
-
-                   })
-                   messages foreach (x => println("(ID vertex : " + x._1 + ", " + "(Vertex Source : " + x._2._1._name + ", Dest " + x._2._2._name + ", distance = " + x._2._3.toInt + "))"))
-
-
-                   val messages2 = myGraph.aggregateMessages[(Personnage, Int)](
-                     sendDamage,
-                     { (x, y) => (x._1, x._2 + y._2) }
-                     //fields //use an optimized join strategy (we don't need the edge attribute)
-                   )
-                   //        messages2 foreach (x => println("(ID vertex : " + x._1 + ", " + "(attaquant : " + x._2._1._name + ", degats : " + x._2._2 + "))"))
-
-           */
-        /*messages2 foreach (m => {
-          val attaquant = m._2._1
-          val defenseur = m._2._2
-          var attribut = m._2._3 //distance
-          val weapon = attaquant.selectWeapon(defenseur, attribut)
-          if (weapon == null) {
-            attaquant.move(defenseur)
-            attribut = 0
-          } else {
-            attribut = attaquant.attack(defenseur, weapon) //damage
+        println("\n\n*** Affichage du merge des messages ***")
+        val messageDamage = newGraph.aggregateMessages[(Personnage, Int)](
+          sendDamage,
+          (a, b) => {
+            (a._1, a._2 + b._2)
           }
-        })*/
+        )
+        println("\n\n*** Affichage du messages ***")
+        messageDamage foreach (x => println("(ID vertex : " + x._1 + ", " + "(Vertex Destinataire : " + x._2._1._name + ", PV : " + x._2._1._healPoint + ", degats : " + x._2._2 + "))"))
+
+        newGraph = newGraph.joinVertices(messageDamage) {
+          (VertexID, psrc, msgrecu) => {
+            msgrecu._1.addHP(-msgrecu._2)
+            msgrecu._1
+          }
+        }
+
+        val aaa = newGraph.vertices.collect()
+        aaa foreach (x => println(x._1 + ", " + x._2._name + ", " + x._2._healPoint))
+        //Reconstruire un graphe à partir des vertices modifiés
+        /*myGraph=myGraph.fromyGraph.vertices)
+myGraph.edges=context.makeRDD(newEdges)
+        myGraph = Graph(context.makeRDD(myGraph.vertices), context.makeRDD(newEdges))*/
 
 
         //        println(myGraph.edges)
@@ -257,7 +215,7 @@ object Principal {
     //Definition des arretes
     val myEdges = generateEdge(myVertices)
     myEdges.foreach(x => println(x.toString))
-    val myGraph = Graph(sc.makeRDD(myVertices), sc.makeRDD(myEdges))
+    var myGraph = Graph(sc.makeRDD(myVertices), sc.makeRDD(myEdges))
     /*val res = */ execute(myGraph, 2, sc)
 
   }
