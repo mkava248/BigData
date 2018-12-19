@@ -133,9 +133,14 @@ object Principal {
 
             //write code _1 attaque _2
 //            msgrecu._1.addHP(-1);
-            msgrecu._1.addHP(-1);
+//            msgrecu._1.addHP(-1);
+            msgrecu._1._cible = msgrecu._2
+            msgrecu._1._distanceCible = msgrecu._3
 
-            val weapon = msgrecu._1.selectWeapon(msgrecu._3)
+
+            msgrecu._1._damage = // TODO
+
+            /*val weapon = msgrecu._1.selectWeapon(msgrecu._3)
             if (weapon == null) {
               //Le monstre n'a pas assez de portée, il avance
               msgrecu._1._ennemy = msgrecu._2
@@ -143,9 +148,10 @@ object Principal {
               //msgrecu._1.move(msgrecu._2)
             } else {
               //msgrecu._1.attack(msgrecu._2, weapon)
-            }
-            msgrecu._1
+            }*/
 
+
+              msgrecu._1
 
 
 
