@@ -23,30 +23,30 @@ object Principal {
 
     var tab = new ArrayBuffer[Personnage]()
     //Generation de Solar
-    val greatsWord = new Weapon("greatsWord", Array(35, 30, 25, 20), 10, 5)
-    val slam = new Weapon("slam", Array(30), 10, 1)
-    val longBow = new Weapon("longBow", Array(31, 26, 21, 16), 10, 5)
+    val greatsWord = new Weapon("greatsWord", Array(35, 30, 25, 20), "3d6+18",10, 5)
+    val slam = new Weapon("slam", Array(30), "2d8+13",10, 1)
+    val longBow = new Weapon("longBow", Array(31, 26, 21, 16), "2d6+14",110, 5)
     val weaponMap = Array(greatsWord, slam, longBow)
     val solar = new Solar("Solar", 363, 44, 15, weaponMap, 0, 0, 0)
 
     //Generation des worgs rider
     val arrayOrc = ArrayBuffer[Orc]()
-    val battleAxe = new Weapon("battleAxe", Array(2), 2, 2)
+    val battleAxe = new Weapon("battleAxe", Array(2), "1d8+2",2, 2)
     (1 to 9) foreach (x => {
       arrayOrc += new WorgRider("WordRider_" + x, 13, 18, Array(battleAxe), 5, 5, 10)
     })
 
     //Generation des barbares orcs
     val arrayBarbarian = ArrayBuffer[Orc]()
-    val doubleAxe = new Weapon("battleAxe", Array(2), 2, 2)
-    val other = new Weapon("battleAxe", Array(2), 2, 2)
+    val doubleAxe = new Weapon("battleAxe", Array(19, 14, 9), "1d8+10",2, 2)
+    val other = new Weapon("battleAxe", Array(2), "1d8+2", 2, 2)
     (1 to 4) foreach (x => {
       arrayOrc += new WorgRider("Barbarian_" + x, 142, 17, Array(doubleAxe, other), 10, 10, 10)
     })
 
     //Generation du warlord
-    val viciousFlail = new Weapon("viciousFlail", Array(1), 2, 2)
-    val lionsShield = new Weapon("lionsShield", Array(1), 2, 2)
+    val viciousFlail = new Weapon("viciousFlail", Array(20, 15, 10),"1d8+10", 2, 2)
+    val lionsShield = new Weapon("lionsShield", Array(23), "1d4+6",2, 2)
     val warlord = new Warlord("Warlord", 141, 27, Array(viciousFlail, lionsShield), 20, 20, 10)
 
     //Affichage
@@ -129,7 +129,7 @@ object Principal {
           (vertexID, pSrc, msgrecu) => {
             println("ID = " + vertexID.toString)
             println("source :" + pSrc._name)
-            println("source : " + msgrecu._1._name + ", dest = " + msgrecu._2._name + ", distance = " + msgrecu._3 + "\n")
+            println("source : " + msgrecu._1._name + ", dest = " + msgrecu._2._name + ", distance = " + msgrecu._3 )
 
             //write code _1 attaque _2
 //            msgrecu._1.addHP(-1);
@@ -138,20 +138,22 @@ object Principal {
             msgrecu._1._distanceCible = msgrecu._3
 
 
-            msgrecu._1._damage = // TODO
+            //msgrecu._1._damage = // TODO
 
-            /*val weapon = msgrecu._1.selectWeapon(msgrecu._3)
+
+
+            val weapon = msgrecu._1.selectWeapon()
             if (weapon == null) {
-              //Le monstre n'a pas assez de portée, il avance
-              msgrecu._1._ennemy = msgrecu._2
-              msgrecu._1.distanceEnnemy = msgrecu._3
-              //msgrecu._1.move(msgrecu._2)
+              //Le monstre n'a pas assez de portée, il avanc
+              msgrecu._1.move(msgrecu._2)
+              println("A bougé" + "\n")
             } else {
-              //msgrecu._1.attack(msgrecu._2, weapon)
-            }*/
+              msgrecu._1.attack(msgrecu._2, weapon)
+              println("Dégat fait :" + msgrecu._1._damage + "\n")
+            }
 
 
-              msgrecu._1
+             msgrecu._1
 
 
 

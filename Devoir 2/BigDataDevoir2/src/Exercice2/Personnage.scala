@@ -7,7 +7,7 @@ class Personnage(val _name: String, var _healPoint: Int, val _armor: Int, val _w
                  var _distanceCible: Long = 0, var _damage: Int = 0) extends Serializable {
 
   def isDead (): Boolean = {
-  _healPoint <= 0;
+  _healPoint <= 0
 }
 
   def addHP (n: Int): Unit = {
@@ -35,34 +35,24 @@ class Personnage(val _name: String, var _healPoint: Int, val _armor: Int, val _w
   pow (pow (_x - personnage._x, 2) + pow (_y - personnage._y, 2), 0.5).toInt
 }
 
-  def selectWeapon (distance: Long): Weapon = {
+  def selectWeapon (): Weapon = {
   //selecct weapon
   var i = 0
-  while (distance > _weaponArray (i)._range && i < _weaponArray.length) {
+  while (_distanceCible > _weaponArray (i)._range && i < _weaponArray.length) { // Tant que l'onne peut pas atteindre, on essaye une arme plus grande
   i += 1
-  if (i >= _weaponArray.length) {
+  if (i >= _weaponArray.length) { //Cela veut dire que l'on a pas trouve d'arme
   return null
 }
 }
-  _weaponArray (i)
+  _weaponArray (i) //retourne la premiere trouvée
 }
 
   def roll (range: Int): Int = {
   scala.util.Random.nextInt (range + 1) + 1
 }
 
-  def attack (defenser: Personnage, weapon: Weapon): Int = {
-  var i = 0
-  val hpDefenseur = defenser._healPoint
-  var damage = 0
-  while (i < weapon._damage.length && hpDefenseur - damage > 0) {
-  if (roll (20) + weapon._damage (i) >= defenser._armor) {
-  //        damage += 3 * roll(6) + 18
-  damage += 1
-}
-  i += 1
-}
-  damage
+  def attack (defender: Personnage, weapon: Weapon): Unit = {
+    _damage = weapon.attacks(defender)
 }
 
 
