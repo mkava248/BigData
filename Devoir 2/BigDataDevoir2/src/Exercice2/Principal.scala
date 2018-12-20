@@ -27,7 +27,7 @@ object Principal {
     val slam = new Weapon("slam", Array(30), "2d8+13", 10, 1)
     val longBow = new Weapon("longBow", Array(31, 26, 21, 16), "2d6+14", 110, 5)
     val weaponMap = Array(greatsWord, slam, longBow)
-    val solar = new Solar("Solar", 363, 44, 15, weaponMap, 0, 0, 0)
+    val solar = new Solar("Solar", 363, 44, 15, weaponMap, 0, 0, 10)
 
     //Generation des worgs rider
     val arrayOrc = ArrayBuffer[Orc]()
@@ -68,8 +68,8 @@ object Principal {
     val a = new ArrayBuffer[Edge[Int]]()
     1 to vertices.length - 1 foreach (i => {
       val distance = vertices(0)._2.calculateDistance(vertices(i)._2)
-      a.append(Edge(vertices(0)._1.toLong, vertices(i)._1.toLong, distance))
-      a.append(Edge(vertices(i)._1.toLong, vertices(0)._1.toLong, distance))
+      a.append(Edge(vertices(0)._1.toLong, vertices(i)._1.toLong /*, distance*/))
+      a.append(Edge(vertices(i)._1.toLong, vertices(0)._1.toLong /*, distance*/))
     })
     a
   }
@@ -82,7 +82,8 @@ object Principal {
     //            print("\n\n")
     //    println(context.srcId)
     //    context.sendToSrc((context.dstAttr, context.dstId.toInt, context.attr))
-    context.sendToDst((context.dstAttr, context.srcAttr, context.attr))
+    if (!context.dstAttr.isDead() && !context.srcAttr.isDead())
+      context.sendToDst((context.dstAttr, context.srcAttr, context.dstAttr.calculateDistance(context.srcAttr)))
   }
 
 
@@ -98,7 +99,7 @@ object Principal {
 
   //(ID du personnage source, (le personnage destination, son ID, les degats))
   def sendDamage(context: EdgeContext[Personnage, Int, (Personnage, Int)]): Unit = {
-    if (context.srcAttr._cible._name.equals(context.dstAttr._name))
+    if (context.srcAttr._cible._name.equals(context.dstAttr._name) && (!context.dstAttr.isDead() && !context.srcAttr.isDead()))
       context.sendToDst((context.dstAttr, context.srcAttr._damage))
   }
 
@@ -108,13 +109,14 @@ object Principal {
     val fields = new TripletFields(true, false, false) //join strategy
 
     def loop1: Unit = {
+      var graph2 = myGraph
       while (true) {
 
         counter += 1
         if (counter >= maxIterations) return
         println("ITERATION NUMERO : " + counter)
 
-        val messages = myGraph.aggregateMessages[(Personnage, Personnage, Long)](
+        val messages = graph2.aggregateMessages[(Personnage, Personnage, Long)](
           sendPosition,
           selectTheClosest
           //fields //use an optimized join strategy (we don't need the edge attribute)
@@ -126,38 +128,41 @@ object Principal {
         println("*******1")
         //Le message envoyé est x._2
         //VertextID du chaque sommet du graph, ID de chaque message (x._1)
-        var newGraph = myGraph.joinVertices(messages) {
+        graph2 = graph2.joinVertices(messages) {
           (vertexID, pSrc, msgrecu) => {
+            println("hello wolrd !")
             println("ID = " + vertexID.toString)
             println("source :" + pSrc._name)
             println("source : " + msgrecu._1._name + ", dest = " + msgrecu._2._name + ", distance = " + msgrecu._3)
 
-            msgrecu._1._cible = msgrecu._2
-            msgrecu._1._distanceCible = msgrecu._3
-
-            val weapon = msgrecu._1.selectWeapon()
-            if (weapon == null) {
-              //Le monstre n'a pas assez de portée, il avance
-              msgrecu._1.move(msgrecu._2)
-              println("A bougé" + "\n")
-            } else {
-              msgrecu._1.attack(msgrecu._2, weapon)
-              println("Dégat fait : " + msgrecu._1._damage + "\n")
-            }
+            println("a")
+              msgrecu._1._cible = msgrecu._2
+            println("b")
+              msgrecu._1._distanceCible = msgrecu._3
+              val weapon = msgrecu._1.selectWeapon()
+            println("c")
+              if (weapon == null) {
+                //Le monstre n'a pas assez de portée, il avance
+                msgrecu._1.move(msgrecu._2)
+                println("A bougé" + "\n")
+              } else {
+                msgrecu._1.attack(msgrecu._2, weapon)
+                println("Dégat fait : " + msgrecu._1._damage + "\n")
+              }
 
             msgrecu._1
           }
         }
         println("***********************")
 
-        val b = newGraph.vertices.collect()
+        val b = graph2.vertices.collect()
         b foreach (x => println(x._1 + ", " + x._2._name + ", " + x._2._healPoint))
 
         //Enregistrer dans les edges, les damages
         //        createEdgeDamage(myGraph)
 
         println("\n\n*** Affichage du merge des messages ***")
-        val messageDamage = newGraph.aggregateMessages[(Personnage, Int)](
+        val messageDamage = graph2.aggregateMessages[(Personnage, Int)](
           sendDamage,
           (a, b) => {
             (a._1, a._2 + b._2)
@@ -166,16 +171,16 @@ object Principal {
         println("\n\n*** Affichage du messages ***")
         messageDamage foreach (x => println("(ID vertex : " + x._1 + ", " + "(Vertex Destinataire : " + x._2._1._name + ", PV : " + x._2._1._healPoint + ", degats : " + x._2._2 + "))"))
 
-        newGraph = newGraph.joinVertices(messageDamage) {
+        graph2 = graph2.joinVertices(messageDamage) {
           (VertexID, psrc, msgrecu) => {
             msgrecu._1.addHP(-msgrecu._2)
             msgrecu._1
           }
         }
 
-        val aaa = newGraph.vertices.collect()
+        /*val aaa = graph2.vertices.collect()
         aaa foreach (x => println(x._1 + ", " + x._2._name + ", " + x._2._healPoint))
-        //Reconstruire un graphe à partir des vertices modifiés
+        *///Reconstruire un graphe à partir des vertices modifiés
         /*myGraph=myGraph.fromyGraph.vertices)
 myGraph.edges=context.makeRDD(newEdges)
         myGraph = Graph(context.makeRDD(myGraph.vertices), context.makeRDD(newEdges))*/
@@ -216,7 +221,7 @@ myGraph.edges=context.makeRDD(newEdges)
     val myEdges = generateEdge(myVertices)
     myEdges.foreach(x => println(x.toString))
     var myGraph = Graph(sc.makeRDD(myVertices), sc.makeRDD(myEdges))
-    /*val res = */ execute(myGraph, 2, sc)
+    /*val res = */ execute(myGraph, 10, sc)
 
   }
 }
