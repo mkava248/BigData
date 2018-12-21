@@ -1,5 +1,6 @@
 package Exercice2_partie_2
 
+import javax.print.DocFlavor.STRING
 import org.apache.spark.graphx._
 import org.apache.spark.{SparkConf, SparkContext}
 
@@ -19,7 +20,7 @@ object Principal {
     val solar = new Solar("Solar", 363, 44, 15, weaponMap, 50)
 
     //Generation des 2 Planetares
-    
+
     //Generation des 2 Movanic Deva
     //Generation des 5 Astral Deva
 
@@ -40,7 +41,7 @@ object Principal {
     val arrayBarbarian = ArrayBuffer[Orc]()
     val greatAxe = new Weapon("greatAxe", Array(11), "1d12+10", 10)
     (1 to 200) foreach (x => {
-      arrayOrc += new Barbarian("Barbarian_" + x, 42, 15, Array(greatAxe), 30)
+      arrayOrc += new Barbarian("Barbarian_" + x, 42, 15, Array(greatAxe), 0)
     })
 
     //Generation du warlord
@@ -64,12 +65,23 @@ object Principal {
   def generateEdge(vertices: ArrayBuffer[(Long, Personnage)]): ArrayBuffer[Edge[Int]] = {
     val a = new ArrayBuffer[Edge[Int]]()
     1 to vertices.length - 1 foreach (i => {
-      //val distance = vertices(0)._2.calculateDistance(vertices(i)._2)
-      a.append(Edge(vertices(0)._1.toLong, vertices(i)._1.toLong /*, distance*/))
-      a.append(Edge(vertices(i)._1.toLong, vertices(0)._1.toLong /*, distance*/))
+      a.append(Edge(vertices(0)._1.toLong, vertices(i)._1.toLong))
+      a.append(Edge(vertices(i)._1.toLong, vertices(0)._1.toLong))
     })
     a
   }
+/*
+  def sendHelp(context: EdgeContext[Personnage, Int, (Personnage, Personnage, String)]): Unit = {
+    //    if (context.srcAttr._healPoint < context.srcAttr._healPointMax / 2)
+    //      context.srcAttr._messageAllie = "Heal"
+    if (!context.dstAttr.isDead() && !context.srcAttr.isDead() /*&& (context.dstAttr._name == "Solar" && context.srcAttr._affilation == true) || (context.srcAttr._name == "Green Great Wyrm Dragon" && context.srcAttr._affilation == false)*/ )
+      context.sendToDst((context.dstAttr, context.srcAttr, context.srcAttr._messageAllie))
+  }
+
+  def selectTheLowerHP(n: (Personnage, Personnage, Int), m: (Personnage, Personnage, Int, Int)): Unit = {
+    if (n._3 < m._3) n
+    else m
+  }*/
 
   //(ID du personnage source, (le personnage destination, son ID, la distance))
   def sendPosition(context: EdgeContext[Personnage, Int, (Personnage, Personnage, Long)]): Unit = {
@@ -112,6 +124,8 @@ object Principal {
         counter += 1
         if (counter >= maxIterations) return
         println("ITERATION NUMERO : " + counter)
+
+        val
 
         val messages = graph2.aggregateMessages[(Personnage, Personnage, Long)](
           sendPosition,
