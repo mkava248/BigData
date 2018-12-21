@@ -2,14 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b7fd4882-bb5c-4f22-9f8e-3260097041b6" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/src/Exercice2_partie_2/Astral.scala" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Exercice2_partie_2/Movanic.scala" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Exercice2_partie_2/Planetar.scala" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Exercice2/Exercice2_1.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/Exercice2/Exercice2_1.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Exercice2_partie_2/Angel.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/Exercice2_partie_2/Angel.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Exercice2_partie_2/Orc.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/Exercice2_partie_2/Orc.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Exercice2_partie_2/Personnage.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/Exercice2_partie_2/Personnage.scala" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Exercice2_partie_2/Principal.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/Exercice2_partie_2/Principal.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Exercice2_partie_2/Solar.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/Exercice2_partie_2/Solar.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Exercice2_partie_2/WyrmDragon.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/Exercice2_partie_2/WyrmDragon.scala" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -21,20 +18,32 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Angel.scala" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Angel.scala" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Exercice2_partie_2/Angel.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" column="116" selection-start-line="2" selection-start-column="116" selection-end-line="2" selection-end-column="116" />
+            <state relative-caret-position="135">
+              <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="WyrmDragon.scala" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Exercice2_partie_2/WyrmDragon.scala">
+      <file leaf-file-name="Planetar.scala" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Exercice2_partie_2/Planetar.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
+            <state relative-caret-position="45">
+              <caret line="3" column="82" selection-start-line="3" selection-start-column="82" selection-end-line="3" selection-end-column="82" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Principal.scala" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Exercice2_partie_2/Principal.scala">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="220">
+              <caret line="36" column="73" lean-forward="true" selection-start-line="36" selection-start-column="73" selection-end-line="36" selection-end-column="73" />
+              <folding>
+                <element signature="e#28#60#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -42,47 +51,26 @@
       <file leaf-file-name="Solar.scala" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Exercice2_partie_2/Solar.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" column="106" selection-start-line="2" selection-start-column="106" selection-end-line="2" selection-end-column="106" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Weapon.scala" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Exercice2_partie_2/Weapon.scala">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="283">
-              <caret line="42" column="1" selection-start-line="42" selection-start-column="1" selection-end-line="42" selection-end-column="1" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Principal.scala" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Exercice2_partie_2/Principal.scala">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="124">
-              <caret line="43" column="36" selection-start-line="43" selection-start-column="36" selection-end-line="43" selection-end-column="36" />
-              <folding>
-                <element signature="e#28#63#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Barbarian.scala" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Exercice2_partie_2/Barbarian.scala">
-          <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="75">
-              <caret line="5" column="1" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="1" />
+              <caret line="5" column="1" lean-forward="true" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="1" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Personnage.scala" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Exercice2_partie_2/Personnage.scala">
+      <file leaf-file-name="Movanic.scala" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Exercice2_partie_2/Movanic.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
+            <state relative-caret-position="45">
+              <caret line="3" column="82" selection-start-line="3" selection-start-column="82" selection-end-line="3" selection-end-column="82" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Astral.scala" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Exercice2_partie_2/Astral.scala">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="45">
+              <caret line="3" column="82" selection-start-line="3" selection-start-column="82" selection-end-line="3" selection-end-column="82" />
             </state>
           </provider>
         </entry>
@@ -112,6 +100,7 @@
       <find>solar</find>
       <find>light</find>
       <find>atta</find>
+      <find>arrayBar</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -141,13 +130,16 @@
         <option value="$PROJECT_DIR$/src/Exercice2/Principal.scala" />
         <option value="$PROJECT_DIR$/src/Exercice1/test.scala" />
         <option value="$PROJECT_DIR$/src/Exercice2/Exercice2_1.scala" />
-        <option value="$PROJECT_DIR$/src/Exercice2_partie_2/Principal.scala" />
         <option value="$PROJECT_DIR$/src/Exercice2_partie_2/Barbarian.scala" />
         <option value="$PROJECT_DIR$/src/Exercice2_partie_2/Personnage.scala" />
         <option value="$PROJECT_DIR$/src/Exercice2_partie_2/Orc.scala" />
         <option value="$PROJECT_DIR$/src/Exercice2_partie_2/Solar.scala" />
         <option value="$PROJECT_DIR$/src/Exercice2_partie_2/WyrmDragon.scala" />
         <option value="$PROJECT_DIR$/src/Exercice2_partie_2/Angel.scala" />
+        <option value="$PROJECT_DIR$/src/Exercice2_partie_2/Planetar.scala" />
+        <option value="$PROJECT_DIR$/src/Exercice2_partie_2/Movanic.scala" />
+        <option value="$PROJECT_DIR$/src/Exercice2_partie_2/Astral.scala" />
+        <option value="$PROJECT_DIR$/src/Exercice2_partie_2/Principal.scala" />
       </list>
     </option>
   </component>
@@ -341,7 +333,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="78397000" />
+    <option name="totallyTimeSpent" value="80117000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-3" y="0" width="1372" height="738" extended-state="6" />
@@ -349,7 +341,7 @@
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info active="true" anchor="bottom" id="Messages" order="7" visible="true" weight="0.3280757" />
+      <window_info anchor="bottom" id="Messages" order="7" weight="0.3280757" />
       <window_info anchor="right" id="Palette&#9;" order="3" />
       <window_info id="Image Layers" order="2" />
       <window_info anchor="bottom" id="Java Enterprise" order="8" />
@@ -358,7 +350,7 @@
       <window_info anchor="right" id="Maven Projects" order="3" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.3280757" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3280757" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
@@ -414,21 +406,6 @@
     <option name="moduleName" value="BigDataDevoir2" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/test.scala" />
-    <entry file="file://$PROJECT_DIR$/src/Exercice1/Parser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2070">
-          <caret line="138" selection-start-line="138" selection-end-line="138" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Exercice1/Creature.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="125" selection-start-line="1" selection-start-column="125" selection-end-line="1" selection-end-column="125" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Exercice1/GetSource.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
@@ -643,16 +620,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Exercice2_partie_2/Principal.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="124">
-          <caret line="43" column="36" selection-start-line="43" selection-start-column="36" selection-end-line="43" selection-end-column="36" />
-          <folding>
-            <element signature="e#28#63#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Exercice2_partie_2/Barbarian.scala">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
@@ -674,10 +641,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Exercice2_partie_2/Solar.scala">
+    <entry file="file://$PROJECT_DIR$/src/Exercice2_partie_2/Personnage.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="106" selection-start-line="2" selection-start-column="106" selection-end-line="2" selection-end-column="106" />
+        <state relative-caret-position="225">
+          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Exercice2_partie_2/Angel.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
         </state>
       </provider>
     </entry>
@@ -688,17 +662,41 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Exercice2_partie_2/Personnage.scala">
+    <entry file="file://$PROJECT_DIR$/src/Exercice2_partie_2/Movanic.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
+        <state relative-caret-position="45">
+          <caret line="3" column="82" selection-start-line="3" selection-start-column="82" selection-end-line="3" selection-end-column="82" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Exercice2_partie_2/Angel.scala">
+    <entry file="file://$PROJECT_DIR$/src/Exercice2_partie_2/Astral.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="116" selection-start-line="2" selection-start-column="116" selection-end-line="2" selection-end-column="116" />
+        <state relative-caret-position="45">
+          <caret line="3" column="82" selection-start-line="3" selection-start-column="82" selection-end-line="3" selection-end-column="82" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Exercice2_partie_2/Planetar.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="82" selection-start-line="3" selection-start-column="82" selection-end-line="3" selection-end-column="82" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Exercice2_partie_2/Solar.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="1" lean-forward="true" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Exercice2_partie_2/Principal.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="36" column="73" lean-forward="true" selection-start-line="36" selection-start-column="73" selection-end-line="36" selection-end-column="73" />
+          <folding>
+            <element signature="e#28#60#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -1,6 +1,5 @@
 package Exercice2_partie_2
 
-import javax.print.DocFlavor.STRING
 import org.apache.spark.graphx._
 import org.apache.spark.{SparkConf, SparkContext}
 
@@ -13,26 +12,43 @@ object Principal {
 
     var tab = new ArrayBuffer[Personnage]()
     //Generation de Solar
-    val greatSword = new Weapon("greatSword", Array(35, 30, 25, 20), "3d6+18", 10)
-    val slam = new Weapon("slam", Array(30), "2d8+13", 10)
+    var greatSword = new Weapon("greatSword", Array(35, 30, 25, 20), "3d6+18", 10)
+    var slam = new Weapon("slam", Array(30), "2d8+13", 10)
     val longBow = new Weapon("longBow", Array(31, 26, 21, 16), "2d6+14", 110)
     val weaponMap = Array(greatSword, slam, longBow)
     val solar = new Solar("Solar", 363, 44, 15, weaponMap, 50)
 
+    val arrayAngel = ArrayBuffer[Angel]()
+
     //Generation des 2 Planetares
+    greatSword = new Weapon("greatSword", Array(27, 22, 17), "3d6+15", 10)
+    slam = new Weapon("slam", Array(24), "2d8+12", 10)
+    (1 to 2) foreach (x => {
+      arrayAngel += new Planetar("Plannetar_" + x, 229, 32, 10, Array(greatSword, slam), 30)
+    })
 
     //Generation des 2 Movanic Deva
+    greatSword = new Weapon("greatSword", Array(17, 12, 7), "2d6+7", 10)
+    (1 to 2) foreach (x => {
+      arrayAngel += new Movanic("MovanicDeva_" + x, 126, 24, 0, Array(greatSword), 40)
+    })
+
     //Generation des 5 Astral Deva
+    var warhammer = new Weapon("warhammer", Array(26,21,16),"1d8+14", 10)
+    slam = new Weapon("slam", Array(23), "1d8+12", 10)
+    (1 to 5) foreach (x => {
+      arrayAngel += new Astral("AstralDeva_" + x, 172, 29, 0, Array(warhammer, slam), 50)
+    })
 
     //TODO a terminer
     //Generation du grand Wyrm dragon vert
-    val breathWeapon = new Weapon("Breath weapon", Array(), "24d6", 70)
+    val breathWeapon = new Weapon("Breath weapon", Array(), "24d6+0", 70)
     val wyrm = new WyrmDragon("Green Great Wyrm Dragon", 391, 37, Array(breathWeapon), 40)
 
     //Generation des 10 Angels Slayer
     val arrayOrc = ArrayBuffer[Orc]()
-    val doubleAxeAngel = new Weapon("battleAxe", Array(21, 16, 11), "1d8", 10)
-    val compositeLongBow = new Weapon("compositeLongBow", Array(19, 14, 9), "1d8", 110)
+    val doubleAxeAngel = new Weapon("battleAxe", Array(21, 16, 11), "1d8+0", 10)
+    val compositeLongBow = new Weapon("compositeLongBow", Array(19, 14, 9), "1d8+0", 110)
     (1 to 10) foreach (x => {
       arrayOrc += new AngelSlayer("AngelSlayer_" + x, 112, 26, Array(doubleAxeAngel, compositeLongBow), 40)
     })
@@ -55,6 +71,7 @@ object Principal {
     println(warlord.toString)*/
 
     tab += solar
+    tab.appendAll(arrayAngel)
     tab.appendAll(arrayBarbarian)
     tab.appendAll(arrayOrc)
     tab
