@@ -2,8 +2,8 @@ package Exercice2
 
 import scala.math.pow
 
-class Personnage(val _name: String, var _healPoint: Int, val _armor: Int, val _weaponArray: Array[Weapon],
-                 var _x: Float, var _y: Float, var _speed: Int, var _cible: Personnage = null,
+class Personnage(val _name: String, var _healPoint: Int, val _healPointMax: Int, val _armor: Int, val _weaponArray: Array[Weapon],
+                 var _x: Float, var _y: Float, var _speed: Int, var _regeneration : Int = 0, var _cible: Personnage = null,
                  var _distanceCible: Long = 0, var _damage: Int = 0) extends Serializable {
 
   def isDead(): Boolean = {
@@ -37,8 +37,12 @@ class Personnage(val _name: String, var _healPoint: Int, val _armor: Int, val _w
 
   def selectWeapon(): Weapon = {
     //selecct weapon
+    _healPoint += _regeneration
+    if(_healPoint > _healPointMax)
+      _healPoint = _healPointMax
+
     var i = 0
-    while (_distanceCible > _weaponArray(i)._range && i < _weaponArray.length) { // Tant que l'onne peut pas atteindre, on essaye une arme plus grande
+    while (_distanceCible >= _weaponArray(i)._range && i < _weaponArray.length) { // Tant que l'onne peut pas atteindre, on essaye une arme plus grande
       i += 1
       if (i >= _weaponArray.length) { //Cela veut dire que l'on a pas trouve d'arme
         return null

@@ -23,30 +23,29 @@ object Principal {
 
     var tab = new ArrayBuffer[Personnage]()
     //Generation de Solar
-    val greatsWord = new Weapon("greatsWord", Array(35, 30, 25, 20), "3d6+18", 10, 5)
-    val slam = new Weapon("slam", Array(30), "2d8+13", 10, 1)
-    val longBow = new Weapon("longBow", Array(31, 26, 21, 16), "2d6+14", 110, 5)
-    val weaponMap = Array(greatsWord, slam, longBow)
-    val solar = new Solar("Solar", 363, 44, 15, weaponMap, 0, 0, 10)
+    val greatSword = new Weapon("greatSword", Array(35, 30, 25, 20), "3d6+18", 10)
+    val slam = new Weapon("slam", Array(30), "2d8+13", 10)
+    val longBow = new Weapon("longBow", Array(31, 26, 21, 16), "2d6+14", 110)
+    val weaponMap = Array(greatSword, slam, longBow)
+    val solar = new Solar("Solar", 363, 44, 15, weaponMap, 0, 0, 50)
 
     //Generation des worgs rider
     val arrayOrc = ArrayBuffer[Orc]()
-    val battleAxe = new Weapon("battleAxe", Array(2), "1d8+2", 2, 2)
+    val battleAxe = new Weapon("battleAxe", Array(2), "1d8+2", 10)
     (1 to 9) foreach (x => {
-      arrayOrc += new WorgRider("WordRider_" + x, 13, 18, Array(battleAxe), 5, 5, 10)
+      arrayOrc += new WorgRider("WorgRider_" + x, 13, 18, Array(battleAxe), 5, 5, 10)
     })
 
     //Generation des barbares orcs
     val arrayBarbarian = ArrayBuffer[Orc]()
-    val doubleAxe = new Weapon("battleAxe", Array(19, 14, 9), "1d8+10", 2, 2)
-    val other = new Weapon("battleAxe", Array(2), "1d8+2", 2, 2)
+    val doubleAxe = new Weapon("doubleAxe", Array(19, 14, 9), "1d8+10", 10)
     (1 to 4) foreach (x => {
-      arrayOrc += new WorgRider("Barbarian_" + x, 142, 17, Array(doubleAxe, other), 10, 10, 10)
+      arrayOrc += new WorgRider("Barbarian_" + x, 142, 17, Array(doubleAxe), 10, 10, 10)
     })
 
     //Generation du warlord
-    val viciousFlail = new Weapon("viciousFlail", Array(20, 15, 10), "1d8+10", 2, 2)
-    val lionsShield = new Weapon("lionsShield", Array(23), "1d4+6", 2, 2)
+    val viciousFlail = new Weapon("viciousFlail", Array(20, 15, 10), "1d8+10", 10)
+    val lionsShield = new Weapon("lionsShield", Array(23), "1d4+6", 10)
     val warlord = new Warlord("Warlord", 141, 27, Array(viciousFlail, lionsShield), 20, 20, 10)
 
     //Affichage
@@ -124,29 +123,25 @@ object Principal {
         //                messages foreach println
         //        messages foreach (x => println(x._1.getClass + " " + x._1.toString + ", " + x._2._1.getClass + ", " + x._2._2.getClass + ", " + x._2._3.getClass))
         if (messages.isEmpty()) return
-        println("*******1")
+        println("*******")
         //Le message envoyé est x._2
         //VertextID du chaque sommet du graph, ID de chaque message (x._1)
         graph2 = graph2.joinVertices(messages) {
           (vertexID, pSrc, msgrecu) => {
-            println("hello wolrd !")
             println("ID = " + vertexID.toString)
             println("source :" + pSrc._name)
             println("source : " + msgrecu._1._name + ", dest = " + msgrecu._2._name + ", distance = " + msgrecu._3)
 
-            println("a")
-              msgrecu._1._cible = msgrecu._2
-            println("b")
+            msgrecu._1._cible = msgrecu._2
               msgrecu._1._distanceCible = msgrecu._3
               val weapon = msgrecu._1.selectWeapon()
-            println("c")
               if (weapon == null) {
                 //Le monstre n'a pas assez de portée, il avance
                 msgrecu._1.move(msgrecu._2)
-                println("A bougé" + "\n")
+                println("A bougé. Il lui reste " + msgrecu._1._distanceCible + "\n")
               } else {
                 msgrecu._1.attack(msgrecu._2, weapon)
-                println("Dégat fait : " + msgrecu._1._damage + "\n")
+                println("Dégat fait avec " +weapon._name + " : " + msgrecu._1._damage + "\n")
               }
 
             msgrecu._1
@@ -177,7 +172,7 @@ object Principal {
 
         val aaa = graph2.vertices.collect()
         aaa foreach (x => println(x._1 + ", " + x._2._name + ", " + x._2._healPoint))
-        *///Reconstruire un graphe à partir des vertices modifiés
+        ///Reconstruire un graphe à partir des vertices modifiés
         /*myGraph=myGraph.fromyGraph.vertices)
 myGraph.edges=context.makeRDD(newEdges)
         myGraph = Graph(context.makeRDD(myGraph.vertices), context.makeRDD(newEdges))*/
@@ -218,7 +213,7 @@ myGraph.edges=context.makeRDD(newEdges)
     val myEdges = generateEdge(myVertices)
     //myEdges.foreach(x => println(x.toString))
     var myGraph = Graph(sc.makeRDD(myVertices), sc.makeRDD(myEdges))
-    /*val res = */ execute(myGraph, 10, sc)
+    /*val res = */ execute(myGraph, 20, sc)
 
   }
 }

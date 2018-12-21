@@ -1,27 +1,26 @@
 package Exercice2
 
-class Weapon(val _name:String, val _touch:Array[Int], val _damage: String, val _range:Int, val _attackNumber:Int) extends Serializable {
+class Weapon(val _name:String, val _touch:Array[Int], val _damage: String, val _range:Int) extends Serializable {
 
   def attacks(defender: Personnage): Int = {
     var i = 0
-    var damage = 0
+    var damages = 0
     val hpDefenseur = defender._healPoint
-    while (i < _touch.length && hpDefenseur - damage > 0) {
+    while (i < _touch.length && hpDefenseur - damages > 0) {
       var randomTouch = roll(20)
-
       if(randomTouch == 20){ //réussite critique, on touche obligatoirement
-        damage += this.damage()
+        damages += this.damage()
       }
-      else if(randomTouch + _touch (i) >= defender._armor){//On regarde si on touche
-        damage += this.damage()
+      else if((randomTouch + _touch(i)) >= defender._armor){//On regarde si on touche
+        damages += this.damage()
       }
-
+      i+=1
     }
-    damage
+    damages
   }
 
   override def toString: String = {
-    "\n" + _name + ", Range = " + _range + ", Nombre d'attaque = " + _attackNumber + ", Pour toucher = [" + _touch.mkString(", ") + ", Dégât = "+ _damage + "]"
+    "\n" + _name + ", Range = " + _range + ", Nombre d'attaque = " + _touch.length + ", Pour toucher = [" + _touch.mkString(", ") + "], Dégât = "+ _damage
   }
 
   def roll (range: Int): Int = {
