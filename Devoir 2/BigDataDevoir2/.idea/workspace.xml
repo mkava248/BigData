@@ -2,9 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b7fd4882-bb5c-4f22-9f8e-3260097041b6" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Exercice2_partie_2/Astral.scala" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Exercice2_partie_2/Movanic.scala" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Exercice2_partie_2/Planetar.scala" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Exercice2_partie_2/Principal.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/Exercice2_partie_2/Principal.scala" afterDir="false" />
     </list>
@@ -39,8 +36,8 @@
       <file leaf-file-name="Principal.scala" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Exercice2_partie_2/Principal.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="220">
-              <caret line="36" column="73" lean-forward="true" selection-start-line="36" selection-start-column="73" selection-end-line="36" selection-end-column="73" />
+            <state relative-caret-position="190">
+              <caret line="89" column="8" selection-start-line="89" selection-start-column="8" selection-end-line="89" selection-end-column="8" />
               <folding>
                 <element signature="e#28#60#0" expanded="true" />
               </folding>
@@ -101,6 +98,7 @@
       <find>light</find>
       <find>atta</find>
       <find>arrayBar</find>
+      <find>generateE</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -333,11 +331,10 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="80117000" />
+    <option name="totallyTimeSpent" value="81436000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-3" y="0" width="1372" height="738" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -692,8 +689,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Exercice2_partie_2/Principal.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="36" column="73" lean-forward="true" selection-start-line="36" selection-start-column="73" selection-end-line="36" selection-end-column="73" />
+        <state relative-caret-position="190">
+          <caret line="89" column="8" selection-start-line="89" selection-start-column="8" selection-end-line="89" selection-end-column="8" />
           <folding>
             <element signature="e#28#60#0" expanded="true" />
           </folding>

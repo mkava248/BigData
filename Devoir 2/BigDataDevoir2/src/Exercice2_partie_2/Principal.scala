@@ -81,9 +81,13 @@ object Principal {
   //TODO utiliser un map ou un flatmpap à la place du foreach
   def generateEdge(vertices: ArrayBuffer[(Long, Personnage)]): ArrayBuffer[Edge[Int]] = {
     val a = new ArrayBuffer[Edge[Int]]()
-    1 to vertices.length - 1 foreach (i => {
-      a.append(Edge(vertices(0)._1.toLong, vertices(i)._1.toLong))
-      a.append(Edge(vertices(i)._1.toLong, vertices(0)._1.toLong))
+    0 to vertices.length - 1 foreach (i => {
+      0 to vertices.length -1 foreach(j => {
+        if(i != j){
+          a.append(Edge(vertices(i)._1.toLong, vertices(j)._1.toLong))
+          a.append(Edge(vertices(j)._1.toLong, vertices(i)._1.toLong))
+        }
+      })
     })
     a
   }
