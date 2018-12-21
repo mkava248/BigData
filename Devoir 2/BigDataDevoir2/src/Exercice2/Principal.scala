@@ -27,20 +27,20 @@ object Principal {
     val arrayOrc = ArrayBuffer[Orc]()
     val battleAxe = new Weapon("battleAxe", Array(2), "1d8+2", 10)
     (1 to 9) foreach (x => {
-      arrayOrc += new WorgRider("WorgRider_" + x, 13, 18, Array(battleAxe), 5, 5, 10)
+      arrayOrc += new WorgRider("WorgRider_" + x, 13, 18, Array(battleAxe), 5, 5, 50)
     })
 
     //Generation des barbares orcs
     val arrayBarbarian = ArrayBuffer[Orc]()
     val doubleAxe = new Weapon("doubleAxe", Array(19, 14, 9), "1d8+10", 10)
     (1 to 4) foreach (x => {
-      arrayOrc += new WorgRider("Barbarian_" + x, 142, 17, Array(doubleAxe), 10, 10, 10)
+      arrayOrc += new WorgRider("Barbarian_" + x, 142, 17, Array(doubleAxe), 10, 10, 40)
     })
 
     //Generation du warlord
     val viciousFlail = new Weapon("viciousFlail", Array(20, 15, 10), "1d8+10", 10)
     val lionsShield = new Weapon("lionsShield", Array(23), "1d4+6", 10)
-    val warlord = new Warlord("Warlord", 141, 27, Array(viciousFlail, lionsShield), 20, 20, 10)
+    val warlord = new Warlord("Warlord", 141, 27, Array(viciousFlail, lionsShield), 20, 20, 30)
 
     //Affichage
     /*println(solar.toString()+"\n")
