@@ -25,10 +25,9 @@ object Principal {
     })
 
     //Generation des barbares orcs
-    val arrayBarbarian = ArrayBuffer[Orc]()
-    val doubleAxe = new Weapon("doubleAxe", Array(19, 14, 9), "1d8+10", 10)
+    val greatAxe = new Weapon("greatAxe", Array(11), "1d12+10", 10)
     (1 to 4) foreach (x => {
-      arrayOrc += new WorgRider("Barbarian_" + x, 142, 17, Array(doubleAxe), /*10, 10,*/ 40)
+      arrayOrc += new Barbarian("Barbarian_" + x, 42, 15, Array(greatAxe), /*10, 10,*/ 30)
     })
 
     //Generation du warlord
