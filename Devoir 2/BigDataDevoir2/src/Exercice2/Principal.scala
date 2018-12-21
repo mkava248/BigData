@@ -27,7 +27,7 @@ object Principal {
     val slam = new Weapon("slam", Array(30), "2d8+13", 10, 1)
     val longBow = new Weapon("longBow", Array(31, 26, 21, 16), "2d6+14", 110, 5)
     val weaponMap = Array(greatsWord, slam, longBow)
-    val solar = new Solar("Solar", 363, 44, 15, weaponMap, 0, 0, 0)
+    val solar = new Solar("Solar", 363, 44, 15, weaponMap, 0, 0, 10)
 
     //Generation des worgs rider
     val arrayOrc = ArrayBuffer[Orc]()
@@ -67,7 +67,7 @@ object Principal {
   def generateEdge(vertices: ArrayBuffer[(Long, Personnage)]): ArrayBuffer[Edge[Int]] = {
     val a = new ArrayBuffer[Edge[Int]]()
     1 to vertices.length - 1 foreach (i => {
-      //      val distance = vertices(0)._2.calculateDistance(vertices(i)._2)
+      val distance = vertices(0)._2.calculateDistance(vertices(i)._2)
       a.append(Edge(vertices(0)._1.toLong, vertices(i)._1.toLong /*, distance*/))
       a.append(Edge(vertices(i)._1.toLong, vertices(0)._1.toLong /*, distance*/))
     })
@@ -129,22 +129,25 @@ object Principal {
         //VertextID du chaque sommet du graph, ID de chaque message (x._1)
         graph2 = graph2.joinVertices(messages) {
           (vertexID, pSrc, msgrecu) => {
+            println("hello wolrd !")
             println("ID = " + vertexID.toString)
             println("source :" + pSrc._name)
             println("source : " + msgrecu._1._name + ", dest = " + msgrecu._2._name + ", distance = " + msgrecu._3)
 
-            msgrecu._1._cible = msgrecu._2
-            msgrecu._1._distanceCible = msgrecu._3
-
-            val weapon = msgrecu._1.selectWeapon()
-            if (weapon == null) {
-              //Le monstre n'a pas assez de portée, il avance
-              msgrecu._1.move(msgrecu._2)
-              println("A bougé" + "\n")
-            } else {
-              msgrecu._1.attack(msgrecu._2, weapon)
-              println("Dégat fait : " + msgrecu._1._damage + "\n")
-            }
+            println("a")
+              msgrecu._1._cible = msgrecu._2
+            println("b")
+              msgrecu._1._distanceCible = msgrecu._3
+              val weapon = msgrecu._1.selectWeapon()
+            println("c")
+              if (weapon == null) {
+                //Le monstre n'a pas assez de portée, il avance
+                msgrecu._1.move(msgrecu._2)
+                println("A bougé" + "\n")
+              } else {
+                msgrecu._1.attack(msgrecu._2, weapon)
+                println("Dégat fait : " + msgrecu._1._damage + "\n")
+              }
 
             msgrecu._1
           }
@@ -174,7 +177,7 @@ object Principal {
 
         val aaa = graph2.vertices.collect()
         aaa foreach (x => println(x._1 + ", " + x._2._name + ", " + x._2._healPoint))
-        //Reconstruire un graphe à partir des vertices modifiés
+        *///Reconstruire un graphe à partir des vertices modifiés
         /*myGraph=myGraph.fromyGraph.vertices)
 myGraph.edges=context.makeRDD(newEdges)
         myGraph = Graph(context.makeRDD(myGraph.vertices), context.makeRDD(newEdges))*/

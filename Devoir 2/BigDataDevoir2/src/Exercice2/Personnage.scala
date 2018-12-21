@@ -32,7 +32,7 @@ class Personnage(val _name: String, var _healPoint: Int, val _armor: Int, val _w
   }
 
   def calculateDistance(personnage: Personnage): Long = {
-    pow(pow(_x - personnage._x, 2) + pow(_y - personnage._y, 2), 0.5).toInt
+    pow(pow(_x - personnage._x, 2) + pow(_y - personnage._y, 2), 0.5).toLong
   }
 
   def selectWeapon(): Weapon = {

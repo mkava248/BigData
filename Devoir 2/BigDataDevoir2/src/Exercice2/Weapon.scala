@@ -10,10 +10,10 @@ class Weapon(val _name:String, val _touch:Array[Int], val _damage: String, val _
       var randomTouch = roll(20)
 
       if(randomTouch == 20){ //réussite critique, on touche obligatoirement
-        damage = this.damage()
+        damage += this.damage()
       }
       else if(randomTouch + _touch (i) >= defender._armor){//On regarde si on touche
-        damage = this.damage()
+        damage += this.damage()
       }
 
     }
