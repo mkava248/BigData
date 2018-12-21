@@ -40,7 +40,6 @@ object Principal {
       arrayAngel += new Astral("AstralDeva_" + x, 172, 29, 0, Array(warhammer, slam), 50)
     })
 
-    //TODO a terminer
     //Generation du grand Wyrm dragon vert
     val breathWeapon = new Weapon("Breath weapon", Array(), "24d6+0", 70)
     val wyrm = new WyrmDragon("Green Great Wyrm Dragon", 391, 37, Array(breathWeapon), 40)
@@ -78,7 +77,6 @@ object Principal {
   }
 
 
-  //TODO utiliser un map ou un flatmpap à la place du foreach
   def generateEdge(vertices: ArrayBuffer[(Long, Personnage)]): ArrayBuffer[Edge[Int]] = {
     val a = new ArrayBuffer[Edge[Int]]()
     0 to vertices.length - 1 foreach (i => {
@@ -94,7 +92,7 @@ object Principal {
 
   def sendHelp(context: EdgeContext[Personnage, Int, (Personnage, Personnage)]): Unit = {
     if (context.srcAttr._healPoint < context.srcAttr._healPointMax / 2 && context.srcAttr._affilation == context.dstAttr._affilation) {
-      if (!context.dstAttr.isDead() && !context.srcAttr.isDead() && (context.dstAttr._name == "Solar" /*|| (context.srcAttr._name == "Green Great Wyrm Dragon" && context.dstAttr._name.contains("AngelSlayer"))*/))
+      if (!context.dstAttr.isDead() && !context.srcAttr.isDead() && (context.dstAttr._name == "Solar" || (context.srcAttr._name == "Green Great Wyrm Dragon" && context.dstAttr._name.contains("AngelSlayer"))))
         context.sendToDst((context.dstAttr, context.srcAttr))
     }
   }
