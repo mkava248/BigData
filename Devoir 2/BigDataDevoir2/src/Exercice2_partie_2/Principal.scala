@@ -34,7 +34,7 @@ object Principal {
     })
 
     //Generation des 5 Astral Deva
-    var warhammer = new Weapon("warhammer", Array(26,21,16),"1d8+14", 10)
+    var warhammer = new Weapon("warhammer", Array(26, 21, 16), "1d8+14", 10)
     slam = new Weapon("slam", Array(23), "1d8+12", 10)
     (1 to 5) foreach (x => {
       arrayAngel += new Astral("AstralDeva_" + x, 172, 29, 0, Array(warhammer, slam), 50)
@@ -82,8 +82,8 @@ object Principal {
   def generateEdge(vertices: ArrayBuffer[(Long, Personnage)]): ArrayBuffer[Edge[Int]] = {
     val a = new ArrayBuffer[Edge[Int]]()
     0 to vertices.length - 1 foreach (i => {
-      0 to vertices.length -1 foreach(j => {
-        if(i != j){
+      0 to vertices.length - 1 foreach (j => {
+        if (i != j) {
           a.append(Edge(vertices(i)._1.toLong, vertices(j)._1.toLong))
           a.append(Edge(vertices(j)._1.toLong, vertices(i)._1.toLong))
         }
@@ -91,18 +91,18 @@ object Principal {
     })
     a
   }
-/*
-  def sendHelp(context: EdgeContext[Personnage, Int, (Personnage, Personnage, String)]): Unit = {
-    //    if (context.srcAttr._healPoint < context.srcAttr._healPointMax / 2)
-    //      context.srcAttr._messageAllie = "Heal"
-    if (!context.dstAttr.isDead() && !context.srcAttr.isDead() /*&& (context.dstAttr._name == "Solar" && context.srcAttr._affilation == true) || (context.srcAttr._name == "Green Great Wyrm Dragon" && context.srcAttr._affilation == false)*/ )
-      context.sendToDst((context.dstAttr, context.srcAttr, context.srcAttr._messageAllie))
+
+  def sendHelp(context: EdgeContext[Personnage, Int, (Personnage, Personnage)]): Unit = {
+    if (context.srcAttr._healPoint < context.srcAttr._healPointMax / 2 && context.srcAttr._affilation == context.dstAttr._affilation) {
+      if (!context.dstAttr.isDead() && !context.srcAttr.isDead() && (context.dstAttr._name == "Solar" /*|| (context.srcAttr._name == "Green Great Wyrm Dragon" && context.dstAttr._name.contains("AngelSlayer"))*/))
+        context.sendToDst((context.dstAttr, context.srcAttr))
+    }
   }
 
-  def selectTheLowerHP(n: (Personnage, Personnage, Int), m: (Personnage, Personnage, Int, Int)): Unit = {
-    if (n._3 < m._3) n
+  def selectTheLowerHP(n: (Personnage, Personnage), m: (Personnage, Personnage)): (Personnage, Personnage) = {
+    if (n._1._healPoint / n._1._healPointMax < m._1._healPoint / m._1._healPointMax) n
     else m
-  }*/
+  }
 
   //(ID du personnage source, (le personnage destination, son ID, la distance))
   def sendPosition(context: EdgeContext[Personnage, Int, (Personnage, Personnage, Long)]): Unit = {
@@ -112,8 +112,10 @@ object Principal {
     //            print("\n\n")
     //    println(context.srcId)
     //    context.sendToSrc((context.dstAttr, context.dstId.toInt, context.attr))
-    if (!context.dstAttr.isDead() && !context.srcAttr.isDead())
-      context.sendToDst((context.dstAttr, context.srcAttr, context.dstAttr.calculateDistance(context.srcAttr)))
+    if (context.srcAttr._affilation != context.dstAttr._affilation) {
+      if (!context.dstAttr.isDead() && !context.srcAttr.isDead())
+        context.sendToDst((context.dstAttr, context.srcAttr, context.dstAttr.calculateDistance(context.srcAttr)))
+    }
   }
 
 
@@ -129,7 +131,9 @@ object Principal {
 
   //(ID du personnage source, (le personnage destination, son ID, les degats))
   def sendDamage(context: EdgeContext[Personnage, Int, (Personnage, Int)]): Unit = {
-    if (context.srcAttr._cible._name.equals(context.dstAttr._name) && (!context.dstAttr.isDead() && !context.srcAttr.isDead()))
+    if (context.srcAttr._cible._name.equals(context.dstAttr._name) &&
+      (!context.dstAttr.isDead() &&
+        !context.srcAttr.isDead()))
       context.sendToDst((context.dstAttr, context.srcAttr._damage))
   }
 
@@ -145,14 +149,28 @@ object Principal {
         counter += 1
         if (counter >= maxIterations) return
         println("ITERATION NUMERO : " + counter)
+/*
+        val messagesHelp = graph2.aggregateMessages[(Personnage, Personnage)](
+          sendHelp,
+          selectTheLowerHP
+          //fields //use an optimized join strategy (we don't need the edge attribute)
+        )
 
+        graph2=graph2.joinVertices(messagesHelp){
+          (vertexID, pSrc, msgrecu) => {
+            msgrecu._2.addHP(25)
+            msgrecu._1
+
+          }
+        }
+*/
         val messages = graph2.aggregateMessages[(Personnage, Personnage, Long)](
           sendPosition,
           selectTheClosest
           //fields //use an optimized join strategy (we don't need the edge attribute)
         )
 
-        //        messages foreach (x => println("(ID vertex : " + x._1 + ", " + "(Vertex Source : " + x._2._1._name + ", PV : " + x._2._1._healPoint + ", Dest : " + x._2._2._name + ", distance = " + x._2._3.toInt + "))"))
+                messages foreach (x => println("(ID vertex : " + x._1 + ", " + "(Vertex Source : " + x._2._1._name + ", PV : " + x._2._1._healPoint + ", Dest : " + x._2._2._name + ", distance = " + x._2._3.toInt + "))"))
 
         //        messages foreach (x => println(x._1.getClass + " " + x._1.toString + ", " + x._2._1.getClass + ", " + x._2._2.getClass + ", " + x._2._3.getClass))
 
