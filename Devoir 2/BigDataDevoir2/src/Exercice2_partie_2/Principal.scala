@@ -1,4 +1,4 @@
-package Exercice2
+package Exercice2_partie_2
 
 import org.apache.spark.graphx._
 import org.apache.spark.{SparkConf, SparkContext}
