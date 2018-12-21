@@ -2,6 +2,7 @@ package Exercice2_partie_2
 
 import org.apache.spark.graphx._
 import org.apache.spark.{SparkConf, SparkContext}
+
 import scala.collection.mutable.ArrayBuffer
 
 
@@ -15,26 +16,36 @@ object Principal {
     val slam = new Weapon("slam", Array(30), "2d8+13", 10)
     val longBow = new Weapon("longBow", Array(31, 26, 21, 16), "2d6+14", 110)
     val weaponMap = Array(greatSword, slam, longBow)
-    val solar = new Solar("Solar", 363, 44, 15, weaponMap, /*0, 0,*/ 50)
+    val solar = new Solar("Solar", 363, 44, 15, weaponMap, 50)
 
-    //Generation des worgs rider
+    //Generation des 2 Planetares
+    
+    //Generation des 2 Movanic Deva
+    //Generation des 5 Astral Deva
+
+    //TODO a terminer
+    //Generation du grand Wyrm dragon vert
+    val breathWeapon = new Weapon("Breath weapon", Array(), "24d6", 70)
+    val wyrm = new WyrmDragon("Green Great Wyrm Dragon", 391, 37, Array(breathWeapon), 40)
+
+    //Generation des 10 Angels Slayer
     val arrayOrc = ArrayBuffer[Orc]()
-    val battleAxe = new Weapon("battleAxe", Array(2), "1d8+2", 10)
-    (1 to 9) foreach (x => {
-      arrayOrc += new WorgRider("WorgRider_" + x, 13, 18, Array(battleAxe), /*5, 5,*/ 50)
+    val doubleAxeAngel = new Weapon("battleAxe", Array(21, 16, 11), "1d8", 10)
+    val compositeLongBow = new Weapon("compositeLongBow", Array(19, 14, 9), "1d8", 110)
+    (1 to 10) foreach (x => {
+      arrayOrc += new AngelSlayer("AngelSlayer_" + x, 112, 26, Array(doubleAxeAngel, compositeLongBow), 40)
     })
 
-    //Generation des barbares orcs
+    //Generation des 200 barbares orcs
     val arrayBarbarian = ArrayBuffer[Orc]()
-    val doubleAxe = new Weapon("doubleAxe", Array(19, 14, 9), "1d8+10", 10)
-    (1 to 4) foreach (x => {
-      arrayOrc += new WorgRider("Barbarian_" + x, 142, 17, Array(doubleAxe), /*10, 10,*/ 40)
+    val greatAxe = new Weapon("greatAxe", Array(11), "1d12+10", 10)
+    (1 to 200) foreach (x => {
+      arrayOrc += new Barbarian("Barbarian_" + x, 42, 15, Array(greatAxe), 30)
     })
 
     //Generation du warlord
     val viciousFlail = new Weapon("viciousFlail", Array(20, 15, 10), "1d8+10", 10)
     val lionsShield = new Weapon("lionsShield", Array(23), "1d4+6", 10)
-    val warlord = new Warlord("Warlord", 141, 27, Array(viciousFlail, lionsShield),/* 20, 20,*/ 30)
 
     //Affichage
     /*println(solar.toString()+"\n")
@@ -43,7 +54,6 @@ object Principal {
     println(warlord.toString)*/
 
     tab += solar
-    tab += warlord
     tab.appendAll(arrayBarbarian)
     tab.appendAll(arrayOrc)
     tab
@@ -182,7 +192,7 @@ object Principal {
 
 
     //Definition des sommets
-    val myVertices = generateFirstFight().zipWithIndex.map { case (creature, index) => (index.toLong, creature) }
+    val myVertices = generateSecondFight().zipWithIndex.map { case (creature, index) => (index.toLong, creature) }
     myVertices.foreach(x => println("\nID = " + x._1 + ", " + x._2.toString))
 
     //Definition des arretes
