@@ -43,7 +43,6 @@ object Principal {
 
     tab += solar
     tab += warlord
-    tab.appendAll(arrayBarbarian)
     tab.appendAll(arrayOrc)
     tab
   }

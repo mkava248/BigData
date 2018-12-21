@@ -9,7 +9,7 @@ import scala.collection.mutable.ArrayBuffer
 
 object Principal {
 
-  def generateFirstFight(): ArrayBuffer[Personnage] = {
+  def generateSecondFight(): ArrayBuffer[Personnage] = {
 
     var tab = new ArrayBuffer[Personnage]()
     //Generation de Solar
@@ -38,10 +38,10 @@ object Principal {
     })
 
     //Generation des 200 barbares orcs
-    val arrayBarbarian = ArrayBuffer[Orc]()
+    val arrayBarbarian = ArrayBuffer[Barbarian]()
     val greatAxe = new Weapon("greatAxe", Array(11), "1d12+10", 10)
     (1 to 200) foreach (x => {
-      arrayOrc += new Barbarian("Barbarian_" + x, 42, 15, Array(greatAxe), 0)
+      arrayBarbarian += new Barbarian("Barbarian_" + x, 42, 15, Array(greatAxe), 0)
     })
 
     //Generation du warlord
@@ -124,8 +124,6 @@ object Principal {
         counter += 1
         if (counter >= maxIterations) return
         println("ITERATION NUMERO : " + counter)
-
-        val
 
         val messages = graph2.aggregateMessages[(Personnage, Personnage, Long)](
           sendPosition,
