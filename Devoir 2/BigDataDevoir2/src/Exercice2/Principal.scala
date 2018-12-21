@@ -10,15 +10,9 @@ class node(val id: Int, val color: Int = 1, val knighthood: Boolean = false, val
   override def toString: String = s"id : $id tiebreakValue : $tiebreakValue color : $color knighthood : $knighthood"
 }
 
-/*def sendTieBreakValues(ctx: EdgeContext[node, String, Long]): Unit = {
-if (ctx.srcAttr.knighthood == false && ctx.dstAttr.knighthood == false) {
-ctx.sendToDst(ctx.srcAttr.tiebreakValue)
-ctx.sendToSrc(ctx.dstAttr.tiebreakValue)
-}
-}*/
-
 
 object Principal {
+
   def generateFirstFight(): ArrayBuffer[Personnage] = {
 
     var tab = new ArrayBuffer[Personnage]()
@@ -66,7 +60,7 @@ object Principal {
   def generateEdge(vertices: ArrayBuffer[(Long, Personnage)]): ArrayBuffer[Edge[Int]] = {
     val a = new ArrayBuffer[Edge[Int]]()
     1 to vertices.length - 1 foreach (i => {
-      val distance = vertices(0)._2.calculateDistance(vertices(i)._2)
+      //val distance = vertices(0)._2.calculateDistance(vertices(i)._2)
       a.append(Edge(vertices(0)._1.toLong, vertices(i)._1.toLong /*, distance*/))
       a.append(Edge(vertices(i)._1.toLong, vertices(0)._1.toLong /*, distance*/))
     })
@@ -74,7 +68,7 @@ object Principal {
   }
 
   //(ID du personnage source, (le personnage destination, son ID, la distance))
-  def sendPosition(context: EdgeContext[Personnage, Int, (Personnage, Personnage, Long /*, (Float, Float)*/ )]): Unit = {
+  def sendPosition(context: EdgeContext[Personnage, Int, (Personnage, Personnage, Long)]): Unit = {
     //            println("Source : " + context.srcAttr._name)
     //            println("Destination : " + context.dstAttr._name)
     //            println("Distance : " + context.attr.toString)
@@ -82,7 +76,7 @@ object Principal {
     //    println(context.srcId)
     //    context.sendToSrc((context.dstAttr, context.dstId.toInt, context.attr))
     if (!context.dstAttr.isDead() && !context.srcAttr.isDead())
-      context.sendToDst((context.dstAttr, context.srcAttr, context.srcAttr.calculateDistance(context.dstAttr)))
+      context.sendToDst((context.dstAttr, context.srcAttr, context.dstAttr.calculateDistance(context.srcAttr)))
   }
 
 
@@ -95,9 +89,10 @@ object Principal {
     else m
   }
 
+
   //(ID du personnage source, (le personnage destination, son ID, les degats))
   def sendDamage(context: EdgeContext[Personnage, Int, (Personnage, Int)]): Unit = {
-    if (context.srcAttr._cible._name.equals(context.dstAttr._name) && !context.dstAttr.isDead() && !context.srcAttr.isDead())
+    if (context.srcAttr._cible._name.equals(context.dstAttr._name) && (!context.dstAttr.isDead() && !context.srcAttr.isDead()))
       context.sendToDst((context.dstAttr, context.srcAttr._damage))
   }
 
@@ -119,49 +114,51 @@ object Principal {
           selectTheClosest
           //fields //use an optimized join strategy (we don't need the edge attribute)
         )
-        messages foreach (x => println("(ID vertex : " + x._1 + ", " + "(Vertex Source : " + x._2._1._name + ", PV : " + x._2._1._healPoint + ", Dest : " + x._2._2._name + ", distance = " + x._2._3 + "))"))
-        //                messages foreach println
+
+        //        messages foreach (x => println("(ID vertex : " + x._1 + ", " + "(Vertex Source : " + x._2._1._name + ", PV : " + x._2._1._healPoint + ", Dest : " + x._2._2._name + ", distance = " + x._2._3.toInt + "))"))
+
         //        messages foreach (x => println(x._1.getClass + " " + x._1.toString + ", " + x._2._1.getClass + ", " + x._2._2.getClass + ", " + x._2._3.getClass))
-        if (messages.isEmpty()) return
-        println("*******")
+
+        if (messages.isEmpty()) return //condition d'arret
+        //        println("*******")
+
         //Le message envoyé est x._2
         //VertextID du chaque sommet du graph, ID de chaque message (x._1)
         graph2 = graph2.joinVertices(messages) {
           (vertexID, pSrc, msgrecu) => {
-            println("ID = " + vertexID.toString)
-            println("source :" + pSrc._name)
-            println("source : " + msgrecu._1._name + ", dest = " + msgrecu._2._name + ", distance = " + msgrecu._3)
+            //            println("ID = " + vertexID.toString)
+            //            println("source :" + pSrc._name)
+            //            println("source : " + msgrecu._1._name + ", dest = " + msgrecu._2._name + ", distance = " + msgrecu._3)
 
             msgrecu._1._cible = msgrecu._2
-              msgrecu._1._distanceCible = msgrecu._3
-              val weapon = msgrecu._1.selectWeapon()
-              if (weapon == null) {
-                //Le monstre n'a pas assez de portée, il avance
-                msgrecu._1.move(msgrecu._2)
-                println("A bougé. Il lui reste " + msgrecu._1._distanceCible + "\n")
-              } else {
-                msgrecu._1.attack(msgrecu._2, weapon)
-                println("Dégat fait avec " +weapon._name + " : " + msgrecu._1._damage + "\n")
-              }
+            msgrecu._1._distanceCible = msgrecu._3
+
+            val weapon = msgrecu._1.selectWeapon()
+            if (weapon == null) {
+              //Le monstre n'a pas assez de portée, il avance
+              msgrecu._1.move(msgrecu._2)
+              //              println("A bougé" + "\n")
+            } else {
+              msgrecu._1.attack(msgrecu._2, weapon)
+              //              println("Dégat fait : " + msgrecu._1._damage + "\n")
+            }
 
             msgrecu._1
           }
         }
-        println("***********************")
+        //        println("***********************")
 
-        val b = graph2.vertices.collect()
-        b foreach (x => println(x._1 + ", " + x._2._name + ", " + x._2._healPoint))
+        //        graph2.vertices.collect() foreach (x => println(x._1 + ", " + x._2._name + ", " + x._2._healPoint))
 
-
-        println("\n\n*** Affichage du merge des messages ***")
+        //        println("\n\n*** Affichage du merge des messages ***")
         val messageDamage = graph2.aggregateMessages[(Personnage, Int)](
           sendDamage,
           (a, b) => {
             (a._1, a._2 + b._2)
           }
         )
-        println("\n\n*** Affichage du messages ***")
-        messageDamage foreach (x => println(/*"(ID vertex : " + x._1 + ", " + */ "(Vertex Destinataire : " + x._2._1._name + ", PV : " + x._2._1._healPoint + ", degats : " + x._2._2 + "))"))
+        //        println("\n\n*** Affichage du messages ***")
+        //messageDamage foreach (x => println("(ID vertex : " + x._1 + ", " + "(Vertex Destinataire : " + x._2._1._name + ", PV : " + x._2._1._healPoint + ", degats : " + x._2._2 + "))"))
 
         graph2 = graph2.joinVertices(messageDamage) {
           (VertexID, psrc, msgrecu) => {
@@ -170,9 +167,10 @@ object Principal {
           }
         }
 
-        val aaa = graph2.vertices.collect()
-        aaa foreach (x => println(x._1 + ", " + x._2._name + ", " + x._2._healPoint))
-        ///Reconstruire un graphe à partir des vertices modifiés
+
+        graph2.vertices.collect() foreach (x => println(x._1 + ", " + x._2._name + ", PV = " + x._2._healPoint + ", [" + x._2._x + ", " + x._2._y + "]" + ", Cible [" + x._2._cible._name + ", " + x._2._distanceCible + ", " + x._2._damage + "]\n"))
+        println("*** Fin de l'iteration " + counter + "***\n\n\n")
+        //Reconstruire un graphe à partir des vertices modifiés
         /*myGraph=myGraph.fromyGraph.vertices)
 myGraph.edges=context.makeRDD(newEdges)
         myGraph = Graph(context.makeRDD(myGraph.vertices), context.makeRDD(newEdges))*/
@@ -211,9 +209,9 @@ myGraph.edges=context.makeRDD(newEdges)
 
     //Definition des arretes
     val myEdges = generateEdge(myVertices)
-    //myEdges.foreach(x => println(x.toString))
+    myEdges.foreach(x => println(x.toString))
     var myGraph = Graph(sc.makeRDD(myVertices), sc.makeRDD(myEdges))
-    /*val res = */ execute(myGraph, 20, sc)
+    /*val res = */ execute(myGraph, 100, sc)
 
   }
 }
