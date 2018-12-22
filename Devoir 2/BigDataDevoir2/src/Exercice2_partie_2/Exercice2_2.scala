@@ -70,6 +70,7 @@ object Principal {
     println(warlord.toString)*/
 
     tab += solar
+    tab += wyrm
     tab.appendAll(arrayAngel)
     tab.appendAll(arrayBarbarian)
     tab.appendAll(arrayOrc)
